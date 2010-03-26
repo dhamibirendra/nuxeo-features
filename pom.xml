@@ -27,7 +27,7 @@
   </properties>
 
   <modules>
-<!-
+<!--
     <module>nuxeo-platform-annotations</module>
     <module>nuxeo-platform-audit</module>
     <module>nuxeo-platform-comment</module>
