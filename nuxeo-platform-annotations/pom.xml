@@ -115,7 +115,8 @@
      <id>public-snapshot</id>
      <url>http://maven.nuxeo.org/public-snapshot</url>
      <snapshots>
-       <enabled>true</enabled>
+       <enabled>false</enabled>
+ <updatePolicy>never</updatePolicy>
      </snapshots>
    </repository>
   </repositories>
