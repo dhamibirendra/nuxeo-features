@@ -191,13 +191,14 @@ public class PreviewRestlet extends BaseNuxeoRestlet {
 
         sb.append("<html><body><center><h1>");
         if (e == null) {
-            sb.append("No preview is available for this document</h1>");
+            sb.append("Preview functionality is not available for this file type.</h1>");
         } else {
-            sb.append("Preview can not be generated for this document</h1>");
-            sb.append("<pre>Blob path: ");
-            sb.append(xpath);
-            sb.append("</pre>");
-            sb.append("<pre>");
+            sb.append("Preview functionality is not available for this file type.</h1>");
+//            sb.append("<pre>Blob path: ");
+//            sb.append(xpath);
+//            sb.append("</pre>");
+            sb.append("<pre style=\"display:none\">");
+//            sb.append(e.toString());
             sb.append(e.toString());
             sb.append("</pre>");
         }
