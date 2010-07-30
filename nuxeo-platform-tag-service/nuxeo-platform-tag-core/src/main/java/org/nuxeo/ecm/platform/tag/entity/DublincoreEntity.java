@@ -38,7 +38,7 @@ import javax.persistence.TemporalType;
  * Generated for the Dublincore table.
  */
 @Entity
-@Table(name = "DUBLINCORE")
+@Table(name = "dublincore")
 public class DublincoreEntity implements Serializable {
     private static final long serialVersionUID = 1L;
 

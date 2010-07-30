@@ -35,7 +35,7 @@ import javax.persistence.Table;
  * Generated for Tag table.
  */
 @Entity
-@Table(name = "TAG")
+@Table(name = "tag")
 public class TagEntity implements Serializable {
     private static final long serialVersionUID = 1L;
 
