@@ -4,5 +4,5 @@ Bundle-Name: Nuxeo ECM Relations
 Bundle-SymbolicName: org.nuxeo.ecm.relations;singleton:=true
 Bundle-Vendor: Nuxeo
 Bundle-Category: web,stateful
-Require-Bundle: org.nuxeo.ecm.relations.api
+Require-Bundle: org.eclipse.osgi, org.nuxeo.runtime,org.nuxeo.ecm.relations.api, org.nuxeo.ecm.annotations.client
 Nuxeo-Component: OSGI-INF/nxrelations.xml

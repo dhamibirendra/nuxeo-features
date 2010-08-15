@@ -5,6 +5,10 @@ Bundle-SymbolicName: org.nuxeo.ecm.platform.preview;singleton:=true
 Bundle-Version: 1.0.0
 Bundle-Category: web,stateless
 Require-Bundle: org.nuxeo.ecm.platform.ui,
+ org.nuxeo.ecm.core.api,
+ org.nuxeo.ecm.core.convert,
+ org.nuxeo.ecm.core.convert.api,
+ org.nuxeo.runtime,
  org.nuxeo.ecm.platform.convert,
  org.nuxeo.ecm.platform.mimetype.api
 Nuxeo-Component: OSGI-INF/restAPI-contrib.xml,
@@ -14,3 +18,15 @@ Nuxeo-Component: OSGI-INF/restAPI-contrib.xml,
  OSGI-INF/actions-contrib.xml,
  OSGI-INF/docview-codec-contrib.xml,
  OSGI-INF/convert-service-contrib.xml
+Export-Package: org.nuxeo.ecm.platform.preview.adapter,
+ org.nuxeo.ecm.platform.preview.adapter.base,
+ org.nuxeo.ecm.platform.preview.adapter.factories,
+ org.nuxeo.ecm.platform.preview.api,
+ org.nuxeo.ecm.platform.preview.codec,
+ org.nuxeo.ecm.platform.preview.converters,
+ org.nuxeo.ecm.platform.preview.helper,
+ org.nuxeo.ecm.platform.preview.restlet,
+ org.nuxeo.ecm.platform.preview.seam,
+ org.nuxeo.ecm.platform.preview.tests.codec,
+ org.nuxeo.ecm.platform.preview.tests.helper,
+ org.nuxeo.ecm.platform.preview.tests.service

@@ -8,3 +8,5 @@ Require-Bundle: org.nuxeo.ecm.core.api,
  org.nuxeo.ecm.platform.io.api,
  org.nuxeo.ecm.relations.api
 Nuxeo-Component: OSGI-INF/io-relations-contrib.xml
+Export-Package: org.nuxeo.ecm.platform.relations.io,
+ org.nuxeo.ecm.platform.relations.io.test

@@ -5,6 +5,7 @@ Bundle-SymbolicName: org.nuxeo.ecm.platform.io.core;singleton:=true
 Bundle-Vendor: Nuxeo
 Bundle-Category: web,stateful
 Require-Bundle: org.nuxeo.ecm.core.api,
+ org.nuxeo.ecm.relations.io,
  org.nuxeo.ecm.core.io,
  org.nuxeo.ecm.platform.io.api
 Nuxeo-Component: OSGI-INF/io-framework.xml

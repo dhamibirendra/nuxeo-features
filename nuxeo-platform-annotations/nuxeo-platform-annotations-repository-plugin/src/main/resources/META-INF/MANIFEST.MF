@@ -4,7 +4,7 @@ Bundle-Name: Nuxeo ECM Annotations Repository Plugin
 Bundle-SymbolicName: org.nuxeo.ecm.annotations.repository;singleton:=true
 Bundle-Vendor: Nuxeo
 Bundle-Category: web,stateless
-Require-Bundle: org.nuxeo.ecm.annotations
+Require-Bundle: org.nuxeo.ecm.annotations, org.nuxeo.runtime, org.nuxeo.ecm.relations.api, org.nuxeo.ecm.core.event, org.nuxeo.ecm.platform.annotations.api, org.nuxeo.ecm.platform.web.common, org.nuxeo.ecm.platform.url.api, org.nuxeo.ecm.annotations
 Nuxeo-Component: OSGI-INF/annotations-repository-core-contrib.xml,
   OSGI-INF/AnnotationsRepositoryService.xml,
   OSGI-INF/annotations-repository-contrib.xml,
