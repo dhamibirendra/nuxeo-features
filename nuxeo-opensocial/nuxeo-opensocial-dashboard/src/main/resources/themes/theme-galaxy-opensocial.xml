@@ -603,7 +603,7 @@
       <selector path=".searchService" view="User services (Galaxy theme)">
         <vertical-align>middle</vertical-align>
         <float>right</float>
-        <display>none</display>
+        <!--display>none</display-->
       </selector>
       <selector path=".userActions" view="User services (Galaxy theme)">
         <padding-top>11px</padding-top>
@@ -644,6 +644,12 @@
         <padding>0</padding>
         <line-height>1%</line-height>
       </selector>
+      <selector path="form div.searchService span.advancedSearchLink a" view="User services (Galaxy theme)">
+        <color>black</color>
+        <font-family>arial,helvetica,sans-serif</font-family>
+        <font-size>11px</font-size>
+        <!--display>none</display-->
+      </selector>      
       <selector path=".userServices .button" view="User services (Galaxy theme)">
         <margin-right>4px</margin-right>
       </selector>
