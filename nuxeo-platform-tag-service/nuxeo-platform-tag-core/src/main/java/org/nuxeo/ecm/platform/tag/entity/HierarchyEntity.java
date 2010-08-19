@@ -34,7 +34,7 @@ import javax.persistence.Table;
  * Generated for Hierarchy table.
  */
 @Entity
-@Table(name = "HIERARCHY")
+@Table(name = "hierarchy")
 public class HierarchyEntity implements Serializable {
     private static final long serialVersionUID = 1L;
 

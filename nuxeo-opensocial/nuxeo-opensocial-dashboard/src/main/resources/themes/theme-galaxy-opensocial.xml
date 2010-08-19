@@ -98,10 +98,13 @@
     <layout element="page[1]/section[1]/cell[1]">
       <width>18%</width>
       <text-align>center</text-align>
+      <display>none</display>
     </layout>
     <layout element="page[1]/section[1]/cell[2]">
-      <width>82%</width>
+      <width>100%</width>
       <padding>0px 10px 0px 0px</padding>
+      <background>#CEDFF5</background>
+      <border-bottom>1px solid #292929</border-bottom>
     </layout>
     <layout element="page[1]/section[1]/cell[3]">
       <width>0%</width>
@@ -600,10 +603,21 @@
       <selector path=".searchService" view="User services (Galaxy theme)">
         <vertical-align>middle</vertical-align>
         <float>right</float>
+        <!--display>none</display-->
       </selector>
       <selector path=".userActions" view="User services (Galaxy theme)">
         <padding-top>11px</padding-top>
+        <padding-left>8px</padding-left>
       </selector>
+      <selector path="form div.userActions span" view="User services (Galaxy theme)">
+        <color>black</color>
+        <!--<font-family>arial,helvetica,sans-serif</font-family>-->
+        <font-family>verdana,arial,helvetica,sans-serif !important</font-family>
+        <font-size>11px</font-size>
+      </selector>
+      <selector path="form div.userActions span a" view="User services (Galaxy theme)">
+        <color>black</color>
+      </selector>      
       <selector path=".directoryFilter, .searchField" view="User services (Galaxy theme)">
         <border>1px normal #666</border>
         <background>url(${org.nuxeo.ecm.contextPath}/icons/search.gif) 2px 2px no-repeat #FFF</background>
@@ -630,6 +644,12 @@
         <padding>0</padding>
         <line-height>1%</line-height>
       </selector>
+      <selector path="form div.searchService span.advancedSearchLink a" view="User services (Galaxy theme)">
+        <color>black</color>
+        <font-family>arial,helvetica,sans-serif</font-family>
+        <font-size>11px</font-size>
+        <!--display>none</display-->
+      </selector>      
       <selector path=".userServices .button" view="User services (Galaxy theme)">
         <margin-right>4px</margin-right>
       </selector>
