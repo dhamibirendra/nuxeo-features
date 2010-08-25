@@ -43,7 +43,7 @@ import org.hibernate.cfg.AnnotationConfiguration;
 import org.hibernate.cfg.Environment;
 import org.hibernate.cfg.Settings;
 import org.hibernate.dialect.Dialect;
-import org.hibernate.dialect.DialectFactory;
+import org.hibernate.dialect.resolver.DialectFactory;
 import org.hibernate.ejb.packaging.PersistenceMetadata;
 import org.hibernate.ejb.packaging.PersistenceXmlLoader;
 import org.hibernate.impl.SessionImpl;
@@ -124,8 +124,9 @@ public class TagSchemaUpdater {
 
     public static Dialect determineDialect(SessionImpl session) {
         try {
-            DatabaseMetaData meta = session.getFactory().getConnectionProvider().getConnection().getMetaData();
-            return DialectFactory.determineDialect(meta.getDatabaseProductName(), meta.getDatabaseMajorVersion());
+//            DatabaseMetaData meta = session.getFactory().getConnectionProvider().getConnection().getMetaData();
+          //  return DialectFactory.determineDialect(meta.getDatabaseProductName(), meta.getDatabaseMajorVersion());
+            return DialectFactory.buildDialect(new Properties(), session.getFactory().getConnectionProvider().getConnection());
         } catch (SQLException e) {
             throw new Error("Cannot determine dialect", e);
         }

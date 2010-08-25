@@ -54,6 +54,10 @@
       <artifactId>persistence</artifactId>
       <scope>provided</scope>
     </dependency>
+	<dependency>
+        <groupId>org.hibernate</groupId>
+        <artifactId>hibernate</artifactId>
+	</dependency>
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-entitymanager</artifactId>
