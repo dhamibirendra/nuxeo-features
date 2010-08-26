@@ -30,3 +30,6 @@ Export-Package: org.nuxeo.ecm.platform.preview.adapter,
  org.nuxeo.ecm.platform.preview.tests.codec,
  org.nuxeo.ecm.platform.preview.tests.helper,
  org.nuxeo.ecm.platform.preview.tests.service
+Nuxeo-Require: org.nuxeo.ecm.platform.ui,
+ org.nuxeo.ecm.platform.convert,
+ org.nuxeo.ecm.platform.mimetype.api

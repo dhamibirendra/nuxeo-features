@@ -9,3 +9,6 @@ Require-Bundle: org.nuxeo.ecm.core.api,
  org.nuxeo.ecm.core.io,
  org.nuxeo.ecm.platform.io.api
 Nuxeo-Component: OSGI-INF/io-framework.xml
+Nuxeo-Require: org.nuxeo.ecm.core.api,
+ org.nuxeo.ecm.core.io,
+ org.nuxeo.ecm.platform.io.api
