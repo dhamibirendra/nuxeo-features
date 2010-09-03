@@ -12,3 +12,7 @@ Nuxeo-Component: OSGI-INF/io-framework.xml
 Nuxeo-Require: org.nuxeo.ecm.core.api,
  org.nuxeo.ecm.core.io,
  org.nuxeo.ecm.platform.io.api
+Provide-Package: org.nuxeo.ecm.core,
+ org.nuxeo.ecm.platform.io.descriptors,
+ org.nuxeo.ecm.platform.io.impl,
+ org.nuxeo.ecm.platform.io.test

@@ -12,4 +12,7 @@ Export-Package: org.nuxeo.ecm.platform.audit,
 Require-Bundle: org.nuxeo.ecm.platform.audit.api,
  org.nuxeo.ecm.platform.el,
  org.nuxeo.ecm.core.event,
- org.nuxeo.ecm.core.persistence
+ org.nuxeo.ecm.core.persistence,
+ org.nuxeo.runtime;bundle-version="1.6.2",
+ org.nuxeo.ecm.core.api;bundle-version="1.6.2"
+Import-Package: javax.el;version="2.1.0"

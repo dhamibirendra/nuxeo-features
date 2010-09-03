@@ -4,3 +4,6 @@ Bundle-Name: Nuxeo ECM JBPM
 Bundle-SymbolicName: org.nuxeo.ecm.platform.jbpm.api;singleton:=true
 Bundle-Vendor: Nuxeo
 Require-Bundle: org.nuxeo.ecm.core.api
+Provide-Package: org.nuxeo.ecm.platform.jbpm,
+ org.nuxeo.ecm.platform.jbpm.dashboard,
+ org.nuxeo.ecm.platform.jbpm.operations
