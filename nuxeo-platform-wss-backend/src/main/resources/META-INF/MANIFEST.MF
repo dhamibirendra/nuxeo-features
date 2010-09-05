@@ -4,7 +4,8 @@ Bundle-Name: Nuxeo WSS Backend
 Bundle-SymbolicName: org.nuxeo.ecm.platform.wss.backend;singleton:=true
 Bundle-Version: 1.0.0
 Bundle-Category: web,stateless
-Require-Bundle: org.nuxeo.ecm.platform.web.common
+Require-Bundle: org.nuxeo.ecm.platform.web.common,
+ org.nuxeo.runtime;bundle-version="1.6.2"
 Nuxeo-Component: OSGI-INF/authentication-contrib.xml,
  OSGI-INF/request-controler-contrib.xml,
  OSGI-INF/wssbackendmanager-framework.xml
