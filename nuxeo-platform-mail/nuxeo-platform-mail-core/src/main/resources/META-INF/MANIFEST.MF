@@ -10,4 +10,5 @@ Nuxeo-Component: OSGI-INF/nxmail-framework.xml,
  OSGI-INF/nxmail-contrib.xml,
  OSGI-INF/nxmail-listener-contrib.xml
 Provide-Package: org.nuxeo.ecm.platform.mail
-Import-Package: javax.mail;version="1.4.1"
+Import-Package: javax.mail;version="1.4.1",
+ javax.mail.internet;version="1.4.1"

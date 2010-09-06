@@ -4,5 +4,6 @@ Bundle-Name: nuxeo-spaces-api
 Bundle-SymbolicName: org.nuxeo.ecm.spaces.api;singleton:=true
 Bundle-Version: 1.0.0
 Bundle-Vendor: Leroy Merlin
-Provide-Package: org.nuxeo.ecm.spaces.api
+Provide-Package: org.nuxeo.ecm.spaces.api,
+ org.nuxeo.ecm.spaces.api.exceptions
 Require-Bundle: org.nuxeo.ecm.core

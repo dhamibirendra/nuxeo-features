@@ -8,8 +8,25 @@ Bundle-Version: 1.0.0
 Require-Bundle: org.nuxeo.ecm.core.event,
  org.nuxeo.ecm.platform.ui,
  org.nuxeo.ecm.webengine.core,
- org.nuxeo.ecm.relations.api
+ org.nuxeo.ecm.relations.api,
+ org.nuxeo.ecm.platform.publisher.api
 Nuxeo-Component: OSGI-INF/publisher-framework.xml,
  OSGI-INF/publisher-contrib.xml,
  OSGI-INF/publisher-listeners-contrib.xml
 Nuxeo-WebModule: org.nuxeo.ecm.platform.publisher.remoting.restHandler.RemotePubApp
+Provide-Package: org.nuxeo.ecm.platform.publisher.descriptors,
+ org.nuxeo.ecm.platform.publisher.helper,
+ org.nuxeo.ecm.platform.publisher.impl.core,
+ org.nuxeo.ecm.platform.publisher.impl.localfs,
+ org.nuxeo.ecm.platform.publisher.impl.service,
+ org.nuxeo.ecm.platform.publisher.listeners,
+ org.nuxeo.ecm.platform.publisher.remoting.client,
+ org.nuxeo.ecm.platform.publisher.remoting.invoker,
+ org.nuxeo.ecm.platform.publisher.remoting.marshaling,
+ org.nuxeo.ecm.platform.publisher.remoting.marshaling.basic,
+ org.nuxeo.ecm.platform.publisher.remoting.marshaling.interfaces,
+ org.nuxeo.ecm.platform.publisher.remoting.marshaling.io,
+ org.nuxeo.ecm.platform.publisher.remoting.restHandler,
+ org.nuxeo.ecm.platform.publisher.remoting.restProxies,
+ org.nuxeo.ecm.platform.publisher.remoting.server,
+ org.nuxeo.ecm.platform.publisher.rules

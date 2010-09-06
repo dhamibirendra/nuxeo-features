@@ -15,4 +15,5 @@ Require-Bundle: org.nuxeo.ecm.platform.audit.api,
  org.nuxeo.ecm.core.persistence,
  org.nuxeo.runtime;bundle-version="1.6.2",
  org.nuxeo.ecm.core.api;bundle-version="1.6.2"
-Import-Package: javax.el;version="2.1.0"
+Import-Package: com.sun.el;version="1.0.0",
+ javax.el;version="2.1.0"
