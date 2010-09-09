@@ -6,7 +6,8 @@ Bundle-Version: 1.0.0
 Bundle-Category: web,stateless
 Require-Bundle: org.nuxeo.ecm.platform.web.common,
  org.nuxeo.runtime;bundle-version="1.6.2",
- org.nuxeo.ecm.platform.generic.wss.handler
+ org.nuxeo.ecm.platform.generic.wss.handler,
+ org.nuxeo.ecm.core.storage.sql;bundle-version="1.6.2"
 Nuxeo-Component: OSGI-INF/authentication-contrib.xml,
  OSGI-INF/request-controler-contrib.xml,
  OSGI-INF/wssbackendmanager-framework.xml
