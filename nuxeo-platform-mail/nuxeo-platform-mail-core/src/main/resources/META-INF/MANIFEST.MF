@@ -4,7 +4,10 @@ Bundle-Name: Nuxeo ECM Mail Core
 Bundle-SymbolicName: org.nuxeo.ecm.platform.mail;singleton:=true
 Bundle-Vendor: Nuxeo
 Require-Bundle: org.nuxeo.ecm.core.api,
- org.nuxeo.ecm.core.event
+ org.nuxeo.ecm.core.event,
+ org.nuxeo.ecm.platform.url.api;bundle-version="5.3.2",
+ org.nuxeo.ecm.directory.api;bundle-version="5.3.2",
+ org.nuxeo.ecm.platform.mimetype.api;bundle-version="5.3.2"
 Eclipse-LazyStart: false
 Nuxeo-Component: OSGI-INF/nxmail-framework.xml,
  OSGI-INF/nxmail-contrib.xml,
@@ -12,3 +15,6 @@ Nuxeo-Component: OSGI-INF/nxmail-framework.xml,
 Provide-Package: org.nuxeo.ecm.platform.mail
 Import-Package: javax.mail;version="1.4.1",
  javax.mail.internet;version="1.4.1"
+Bundle-Version: 5.3.2
+Nuxeo-Require: Require-Bundle: org.nuxeo.ecm.core.api,
+ org.nuxeo.ecm.core.event
