@@ -18,9 +18,18 @@ Require-Bundle: org.nuxeo.ecm.platform.placeful.core,
  org.nuxeo.ecm.platform.notification.api,
  org.nuxeo.ecm.platform.url.api,
  org.nuxeo.ecm.core.event,
- org.nuxeo.ecm.platform.placeful.api;bundle-version="5.3.2"
+ org.nuxeo.ecm.platform.placeful.api;bundle-version="5.3.2",
+ org.nuxeo.ecm.platform.usermanager.api;bundle-version="5.3.2",
+ org.nuxeo.ecm.directory.api;bundle-version="5.3.2"
 Nuxeo-RequiredBy: org.nuxeo.ecm.platform.placeful.facade,
  org.nuxeo.ecm.platform.notification.facade
 Import-Package: freemarker.template;version="2.3.16",
  javax.mail;version="1.4.1",
  javax.mail.internet;version="1.4.1"
+Bundle-Version: 5.3.2
+Nuxeo-Require:  org.nuxeo.ecm.platform.placeful.core,
+ org.nuxeo.ecm.platform.usermanager,
+ org.nuxeo.ecm.platform.notification.api,
+ org.nuxeo.ecm.platform.url.api,
+ org.nuxeo.ecm.core.event,
+ org.nuxeo.ecm.platform.placeful.api;bundle-version="5.3.2"

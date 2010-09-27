@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 1
 Bundle-Name: wss-filter
-Bundle-Version: 1.0.0
+Bundle-Version: 5.3.2
 Bundle-Vendor: Nuxeo
 Bundle-SymbolicName: org.nuxeo.ecm.platform.generic.wss.handler
 Provide-Package: org.nuxeo.wss,
@@ -28,3 +28,11 @@ Provide-Package: org.nuxeo.wss,
 Require-Bundle: org.nuxeo.common;bundle-version="1.6.2",
  org.nuxeo.runtime;bundle-version="1.6.2"
 Nuxeo-Require:  
+Import-Package: freemarker.cache;specification-version="2.3.16",
+ freemarker.core;specification-version="2.3.16",
+ freemarker.template;specification-version="2.3.16",
+ javax.servlet;specification-version="2.5.0",
+ javax.servlet.http;specification-version="2.5.0",
+ org.apache.commons.lang;specification-version="2.4.0",
+ org.xml.sax;specification-version="2.0.2",
+ org.xml.sax.helpers;specification-version="2.0.2"

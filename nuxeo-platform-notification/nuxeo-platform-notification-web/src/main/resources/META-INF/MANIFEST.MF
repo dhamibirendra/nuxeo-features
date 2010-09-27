@@ -4,7 +4,13 @@ Bundle-Name: Nuxeo ECM Notification Web Fragment
 Bundle-SymbolicName: org.nuxeo.ecm.platform.notification.web;singleton:=true
 Bundle-Category: stateless
 Require-Bundle: org.nuxeo.ecm.platform.notification.api,
- org.nuxeo.ecm.webapp.core
+ org.nuxeo.ecm.webapp.core,
+ org.nuxeo.ecm.webapp.base;bundle-version="5.3.2",
+ org.nuxeo.ecm.platform.usermanager.api;bundle-version="5.3.2"
 Nuxeo-Component: OSGI-INF/actions-contrib.xml
-Provide-Package: org.nuxeo.ecm.webapp.notification
+Provide-Package: org.nuxeo.ecm.webapp.notification,
+ org.nuxeo.ecm.webapp.notification.email
 Nuxeo-RequiredBy: org.nuxeo.ecm.war
+Bundle-Version: 5.3.2
+Nuxeo-Require: org.nuxeo.ecm.platform.notification.api,
+ org.nuxeo.ecm.webapp.core

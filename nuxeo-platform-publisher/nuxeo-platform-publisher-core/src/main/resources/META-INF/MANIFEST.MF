@@ -30,3 +30,12 @@ Provide-Package: org.nuxeo.ecm.platform.publisher.descriptors,
  org.nuxeo.ecm.platform.publisher.remoting.restProxies,
  org.nuxeo.ecm.platform.publisher.remoting.server,
  org.nuxeo.ecm.platform.publisher.rules
+Import-Package: javax.ws.rs;specification-version="1.1.1",
+ javax.ws.rs.core;specification-version="1.1.1",
+ javax.ws.rs.ext;specification-version="1.1.1",
+ org.apache.commons.logging;specification-version="1.0.4",
+ org.apache.http;specification-version="4.0.0",
+ org.apache.http.entity;specification-version="4.0.0",
+ org.apache.http.impl;specification-version="4.0.0",
+ org.dom4j;specification-version="1.6.1",
+ org.dom4j.io;specification-version="1.6.1"
