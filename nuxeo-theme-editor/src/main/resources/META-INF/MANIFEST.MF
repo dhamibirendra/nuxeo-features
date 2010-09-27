@@ -5,7 +5,7 @@ Bundle-SymbolicName: org.nuxeo.theme.editor;singleton:=true
 Bundle-Vendor: Chalmers
 Provide-Package: org.nuxeo.theme.editor
 Bundle-Localization: bundle
-Bundle-Version: ${eclipseVersion}-r${buildNumber}
+Bundle-Version: 5.3.2
 Require-Bundle: org.nuxeo.theme.webengine
 Nuxeo-Require: org.nuxeo.theme.webengine
 Nuxeo-Component: OSGI-INF/nxthemes-editor-contrib.xml
