@@ -617,6 +617,8 @@
       </selector>
       <selector path="form div.userActions span a" view="User services (Galaxy theme)">
         <color>black</color>
+        <font-family>arial,helvetica,sans-serif</font-family>
+        <font-size>11px</font-size>
       </selector>      
       <selector path=".directoryFilter, .searchField" view="User services (Galaxy theme)">
         <border>1px normal #666</border>
