@@ -4,7 +4,13 @@ Bundle-Name: WebEngine Blogs Module
 Bundle-SymbolicName: org.nuxeo.ecm.platform.webengine.blogs;singleton=true
 Bundle-Vendor: Nuxeo
 Bundle-Category: web,stateless
-Provide-Package: org.nuxeo.ecm.platform.webengine.jsf
+Provide-Package: org.nuxeo.ecm.platform.webengine.jsf,
+ org.nuxeo.webengine.blogs,
+ org.nuxeo.webengine.blogs.adapters,
+ org.nuxeo.webengine.blogs.fragments,
+ org.nuxeo.webengine.blogs.listeners,
+ org.nuxeo.webengine.blogs.models,
+ org.nuxeo.webengine.blogs.webcomments
 Nuxeo-Component: OSGI-INF/theme-contrib.xml,
  OSGI-INF/webengine-blogs-ecm-types-contrib.xml,
  OSGI-INF/webengine-blogs-layouts-contrib.xml,

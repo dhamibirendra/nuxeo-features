@@ -9,3 +9,6 @@ Nuxeo-Component: OSGI-INF/comment-jbpm-contrib.xml,
  OSGI-INF/notification-contrib.xml
 Require-Bundle: org.nuxeo.ecm.platform.comment.api,
   org.nuxeo.ecm.core.api
+Provide-Package: org.nuxeo.ecm.platform.comment.workflow,
+ org.nuxeo.ecm.platform.comment.workflow.services
+Bundle-Version: 5.3.2
