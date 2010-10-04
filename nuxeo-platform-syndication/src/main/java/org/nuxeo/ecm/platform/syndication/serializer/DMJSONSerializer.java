@@ -43,10 +43,8 @@ import org.nuxeo.ecm.core.api.DocumentModel;
 import org.nuxeo.ecm.core.api.DocumentModelList;
 import org.nuxeo.ecm.platform.syndication.translate.TranslationHelper;
 import org.nuxeo.ecm.platform.syndication.workflow.DashBoardItem;
-import org.restlet.data.CharacterSet;
 import org.restlet.data.MediaType;
 import org.restlet.data.Response;
-import org.restlet.resource.StringRepresentation;
 
 public class DMJSONSerializer extends AbstractDocumentModelSerializer implements
         DashBoardItemSerializer {
@@ -128,9 +126,7 @@ public class DMJSONSerializer extends AbstractDocumentModelSerializer implements
             cols = Arrays.asList(columnsDefinition.split(colDefinitonDelimiter));
         }
         String json = serialize(summary, docList, cols, req, labels, lang);
-		StringRepresentation output = new StringRepresentation(json,
-				MediaType.TEXT_PLAIN, null, new CharacterSet("UTF-8"));        
-        res.setEntity(output);
+        res.setEntity(json, MediaType.TEXT_PLAIN);
     }
 
     private static final DateFormat DATE_FORMAT = new SimpleDateFormat(
@@ -215,9 +211,7 @@ public class DMJSONSerializer extends AbstractDocumentModelSerializer implements
             Response res, HttpServletRequest req) throws ClientException {
         String json = serialize(summary, workItems, columnsDefinition, labels,
                 lang);
-		StringRepresentation output = new StringRepresentation(json,
-				MediaType.TEXT_PLAIN, null, new CharacterSet("UTF-8"));        
-        res.setEntity(output);
+        res.setEntity(json, MediaType.TEXT_PLAIN);
     }
 
 }

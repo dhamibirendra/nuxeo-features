@@ -11,5 +11,4 @@ Nuxeo-Component: OSGI-INF/gadgets-service-framework.xml,
  OSGI-INF/directory-contrib.xml,
  OSGI-INF/directory-ui-contrib.xml,
  OSGI-INF/schema-contrib.xml
-Require-Bundle: org.nuxeo.ecm.directory.api;bundle-version="5.3.2"
 

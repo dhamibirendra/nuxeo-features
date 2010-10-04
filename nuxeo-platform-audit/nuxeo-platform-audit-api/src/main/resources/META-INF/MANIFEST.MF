@@ -4,9 +4,5 @@ Bundle-Name: NXAuditAPI
 Bundle-SymbolicName: org.nuxeo.ecm.platform.audit.api
 Bundle-Localization: plugin
 Bundle-Vendor: Nuxeo
-Export-Package: org.nuxeo.ecm.platform.audit.api,
- org.nuxeo.ecm.platform.audit.api.delegate,
- org.nuxeo.ecm.platform.audit.api.job,
- org.nuxeo.ecm.platform.audit.api.query,
- org.nuxeo.ecm.platform.audit.api.remote
+Export-Package: org.nuxeo.ecm.platform.audit.api, org.nuxeo.ecm.platform.audit.api.remote
 Require-Bundle: org.nuxeo.ecm.core.api, org.nuxeo.ecm.core.event

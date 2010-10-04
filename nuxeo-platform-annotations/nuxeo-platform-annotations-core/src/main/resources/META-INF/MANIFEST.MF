@@ -12,7 +12,6 @@ Provide-Package: org.nuxeo.ecm.annotations,
 Require-Bundle: org.nuxeo.runtime, org.nuxeo.ecm.platform.annotations.api,org.nuxeo.ecm.relations.api
 Nuxeo-Component: OSGI-INF/nxannotations.xml,
   OSGI-INF/annotations-default-contrib.xml
-Nuxeo-Require: org.nuxeo.ecm.platform.annotations.api
 Export-Package: org.nuxeo.ecm.annotations,
  org.nuxeo.ecm.platform.annotations,
  org.nuxeo.ecm.platform.annotations.descriptors,

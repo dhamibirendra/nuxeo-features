@@ -11,4 +11,3 @@ Export-Package: org.nuxeo.ecm.platform.relations.api,
  org.nuxeo.ecm.platform.relations.api.exceptions,
  org.nuxeo.ecm.platform.relations.api.impl,
  org.nuxeo.ecm.platform.relations.api.util
-Nuxeo-Require: 

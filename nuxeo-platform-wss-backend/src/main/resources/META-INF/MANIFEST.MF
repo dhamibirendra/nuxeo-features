@@ -2,18 +2,9 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 1
 Bundle-Name: Nuxeo WSS Backend
 Bundle-SymbolicName: org.nuxeo.ecm.platform.wss.backend;singleton:=true
-Bundle-Version: 5.3.2
+Bundle-Version: 1.0.0
 Bundle-Category: web,stateless
-Require-Bundle: org.nuxeo.ecm.platform.web.common,
- org.nuxeo.runtime;bundle-version="1.6.2",
- org.nuxeo.ecm.platform.generic.wss.handler,
- org.nuxeo.ecm.core.storage.sql;bundle-version="1.6.2",
- org.nuxeo.ecm.core.api;bundle-version="1.6.2",
- org.nuxeo.ecm.platform.jbpm.api;bundle-version="5.3.2",
- org.nuxeo.ecm.platform.usermanager.api;bundle-version="5.3.2"
-Nuxeo-Require: org.nuxeo.ecm.platform.web.common 
+Require-Bundle: org.nuxeo.ecm.platform.web.common
 Nuxeo-Component: OSGI-INF/authentication-contrib.xml,
  OSGI-INF/request-controler-contrib.xml,
  OSGI-INF/wssbackendmanager-framework.xml
-Import-Package: org.jbpm.graph.exe,
- org.jbpm.taskmgmt.exe

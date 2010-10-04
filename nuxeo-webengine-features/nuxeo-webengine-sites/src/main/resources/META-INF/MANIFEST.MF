@@ -2,7 +2,6 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: WebEngine Sites Module
 Bundle-SymbolicName: org.nuxeo.ecm.platform.webengine.sites
-Fragment-Host: org.nuxeo.theme.core
 Bundle-Vendor: Nuxeo
 Bundle-Category: web,stateless
 Provide-Package: org.nuxeo.ecm.platform.webengine.jsf
@@ -12,27 +11,6 @@ Nuxeo-Component: OSGI-INF/webengine-layouts-contrib.xml,
  OSGI-INF/theme-contrib.xml,
  OSGI-INF/webengine-sites-wiki-transformer-contrib.xml,
  OSGI-INF/auth-contrib.xml
-Require-Bundle: org.nuxeo.ecm.webapp.core,
- org.nuxeo.ecm.webengine.core,
- org.nuxeo.ecm.platform.webengine.sites.api,
- org.nuxeo.ecm.core.api;bundle-version="1.6.2",
- org.nuxeo.ecm.webengine.base;bundle-version="5.3.2",
- org.nuxeo.ecm.webapp.ui;bundle-version="5.3.2",
- org.nuxeo.ecm.platform.mimetype.api;bundle-version="5.3.2"
+Require-Bundle: org.nuxeo.ecm.webapp.core, org.nuxeo.ecm.webengine.core, org.nuxeo.theme.fragments, org.nuxeo.ecm.platform.webengine.sites.api 
 Nuxeo-RequiredBy: org.nuxeo.ecm.war
-Export-Package: org.nuxeo.webengine.site,
- org.nuxeo.webengine.sites,
- org.nuxeo.webengine.sites.fragments,
- org.nuxeo.webengine.sites.models,
- org.nuxeo.webengine.sites.test.listeners,
- org.nuxeo.webengine.sites.test.utils,
- org.nuxeo.webengine.sites.utils,
- org.nuxeo.webengine.sites.webcomments,
- org.nuxeo.webengine.sites.wiki.rendering
-Bundle-Version: 5.3.2
-Import-Package: javax.ws.rs;version="1.1.1",
- net.sf.json
-Nuxeo-Require: org.nuxeo.ecm.webapp.core,
- org.nuxeo.ecm.webengine.core,
- org.nuxeo.theme.fragments,
- org.nuxeo.ecm.platform.webengine.sites.api 
+Export-Package: org.nuxeo.webengine.site
