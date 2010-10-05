@@ -519,6 +519,22 @@
       <selector path="input.button[disabled=disabled], input.button[disabled=disabled]:hover">
         <color>#ccc</color>
       </selector>
+
+      <selector path="input.opensocial_dashboard_button">
+        <font preset="default (Galaxy fonts)"/>
+        <color>#333333</color>
+        <border preset="buttons (Galaxy borders)"/>
+        <background preset="buttons (Galaxy backgrounds)"/>
+        <padding>2px 5px 2px 5px</padding>
+        <cursor>pointer</cursor>
+      </selector>
+      <selector path="input.opensocial_dashboard_button:hover">
+        <color>#000000</color>
+        <border-color>#92999e</border-color>
+      </selector>
+      <selector path="input.opensocial_dashboard_button[disabled=disabled], input.opensocial_dashboard_button[disabled=disabled]:hover">
+        <color>#ccc</color>
+      </selector>      
     </style>
     <style name="opensocialDashboardNav">
       <selector path="form a.button">
@@ -617,6 +633,8 @@
       </selector>
       <selector path="form div.userActions span a" view="User services (Galaxy theme)">
         <color>black</color>
+        <font-family>arial,helvetica,sans-serif</font-family>
+        <font-size>11px</font-size>
       </selector>      
       <selector path=".directoryFilter, .searchField" view="User services (Galaxy theme)">
         <border>1px normal #666</border>
