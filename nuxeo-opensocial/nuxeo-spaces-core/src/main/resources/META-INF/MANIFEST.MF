@@ -11,3 +11,6 @@ Nuxeo-Component: OSGI-INF/spaces-manager-service.xml,
  OSGI-INF/spaces-adapter-contrib.xml,
  OSGI-INF/spaces-core-contrib.xml,
  OSGI-INF/spaces-factory-service.xml
+Nuxeo-Require: org.nuxeo.ecm.core,
+ org.nuxeo.ecm.spaces.api
+

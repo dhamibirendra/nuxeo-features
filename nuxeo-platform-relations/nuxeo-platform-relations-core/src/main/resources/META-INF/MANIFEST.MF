@@ -6,3 +6,4 @@ Bundle-Vendor: Nuxeo
 Bundle-Category: web,stateful
 Require-Bundle: org.eclipse.osgi, org.nuxeo.runtime,org.nuxeo.ecm.relations.api, org.nuxeo.ecm.annotations.client
 Nuxeo-Component: OSGI-INF/nxrelations.xml
+Nuxeo-Require: org.nuxeo.ecm.relations.api

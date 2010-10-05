@@ -15,3 +15,8 @@ Nuxeo-Component: OSGI-INF/JbpmActiveConfiguration-contrib.xml,
 Require-Bundle: org.nuxeo.ecm.core.api,
   org.nuxeo.ecm.platform.jbpm.api,
   org.nuxeo.ecm.platform.usermanager
+Nuxeo-Require: org.nuxeo.ecm.core.api,
+ org.nuxeo.ecm.platform.jbpm.api,
+ org.nuxeo.ecm.platform.usermanager,
+ org.nuxeo.ecm.core.event
+

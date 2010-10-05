@@ -14,3 +14,8 @@ Nuxeo-Component: OSGI-INF/webengine-layouts-contrib.xml,
 Require-Bundle: org.nuxeo.ecm.webapp.core, org.nuxeo.ecm.webengine.core, org.nuxeo.theme.fragments, org.nuxeo.ecm.platform.webengine.sites.api 
 Nuxeo-RequiredBy: org.nuxeo.ecm.war
 Export-Package: org.nuxeo.webengine.site
+Nuxeo-Require: org.nuxeo.ecm.webapp.core,
+ org.nuxeo.ecm.webengine.core,
+ org.nuxeo.theme.fragments,
+ org.nuxeo.ecm.platform.webengine.sites.api
+

@@ -7,3 +7,5 @@ Bundle-Category: web,stateless
 Bundle-Version: 1.0.0
 Require-Bundle: org.nuxeo.ecm.platform.publisher.core
 Nuxeo-Component: OSGI-INF/publisher-jbpm-contrib.xml
+Nuxeo-Require:  org.nuxeo.ecm.platform.publisher.core,
+ org.nuxeo.ecm.platform.publisher.api

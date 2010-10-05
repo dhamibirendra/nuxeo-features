@@ -20,3 +20,10 @@ Require-Bundle: org.nuxeo.ecm.platform.placeful.core,
  org.nuxeo.ecm.core.event
 Nuxeo-RequiredBy: org.nuxeo.ecm.platform.placeful.facade,
  org.nuxeo.ecm.platform.notification.facade
+Nuxeo-Require:  org.nuxeo.ecm.platform.placeful.core,
+ org.nuxeo.ecm.platform.usermanager,
+ org.nuxeo.ecm.platform.notification.api,
+ org.nuxeo.ecm.platform.url.api,
+ org.nuxeo.ecm.core.event,
+ org.nuxeo.ecm.platform.placeful.api;bundle-version="5.3.2"
+

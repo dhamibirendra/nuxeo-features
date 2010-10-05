@@ -7,3 +7,4 @@ Bundle-Vendor: Leroy Merlin
 Require-Bundle: org.nuxeo.opensocial.gadgets.core
 Nuxeo-Component: OSGI-INF/gadget-contrib.xml
 Bundle-Category: stateless
+Nuxeo-Require: org.nuxeo.opensocial.gadgets.core

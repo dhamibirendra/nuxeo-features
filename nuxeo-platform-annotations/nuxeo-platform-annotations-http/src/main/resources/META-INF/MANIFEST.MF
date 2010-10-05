@@ -8,3 +8,6 @@ Require-Bundle: javax.servlet, org.nuxeo.runtime, org.nuxeo.ecm.platform.annotat
   org.nuxeo.ecm.annotations
 Bundle-Localization: bundle
 Eclipse-LazyStart: true
+Nuxeo-Require: org.nuxeo.ecm.platform.annotations.api,
+  org.nuxeo.ecm.annotations
+

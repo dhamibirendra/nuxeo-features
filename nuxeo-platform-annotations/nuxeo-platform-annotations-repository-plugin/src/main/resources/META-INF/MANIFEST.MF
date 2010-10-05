@@ -9,3 +9,4 @@ Nuxeo-Component: OSGI-INF/annotations-repository-core-contrib.xml,
   OSGI-INF/AnnotationsRepositoryService.xml,
   OSGI-INF/annotations-repository-contrib.xml,
   OSGI-INF/annotations-repository-listener-contrib.xml
+Nuxeo-Require: org.nuxeo.ecm.annotations

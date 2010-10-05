@@ -10,3 +10,6 @@ Nuxeo-Component: OSGI-INF/nxmail-framework.xml,
  OSGI-INF/nxmail-contrib.xml,
  OSGI-INF/nxmail-listener-contrib.xml
 Provide-Package: org.nuxeo.ecm.platform.mail
+Nuxeo-Require: org.nuxeo.ecm.core.api,
+ org.nuxeo.ecm.core.event
+

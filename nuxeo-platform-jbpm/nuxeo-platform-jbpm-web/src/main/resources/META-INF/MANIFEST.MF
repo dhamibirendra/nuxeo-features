@@ -8,3 +8,4 @@ Nuxeo-Component: OSGI-INF/action-contrib.xml,
  OSGI-INF/layouts-contrib.xml
 Nuxeo-RequiredBy: org.nuxeo.ecm.war
 Require-Bundle: org.nuxeo.ecm.platform.jbpm.api
+Nuxeo-Require: org.nuxeo.ecm.platform.jbpm.api
