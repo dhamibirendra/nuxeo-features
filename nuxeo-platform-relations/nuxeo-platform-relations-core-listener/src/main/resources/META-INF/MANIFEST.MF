@@ -11,3 +11,4 @@ Nuxeo-Component: OSGI-INF/relations-core-listener-contrib.xml
 Nuxeo-Require: org.nuxeo.ecm.core,
  org.nuxeo.ecm.core.event,
  org.nuxeo.ecm.relations
+

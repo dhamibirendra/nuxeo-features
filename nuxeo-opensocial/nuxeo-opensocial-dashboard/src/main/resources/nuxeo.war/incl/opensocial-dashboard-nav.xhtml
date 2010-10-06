@@ -1,7 +1,7 @@
 <div xmlns:c="http://java.sun.com/jstl/core" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core">
     <h:form>
-       <table cellspacing="10px" cellpadding="0" border="0" style="width: 100%;">
-       <tr><td>    	
+	<table cellspacing="10px" cellpadding="0" border="0" style="width: 100%;">
+	<tr><td>    	
         <h:selectOneListbox class="dataInputText" size="1" id="selectDomain"
             value="#{opensocialDashboard.selectedDomain}">
             <f:selectItems value="#{opensocialDashboard.domainsSelectItems}"/>
@@ -14,6 +14,6 @@
             class="button"
             action="#{opensocialDashboard.exit}"></h:commandLink>
         <h:messages/>
-        </td></tr></table>
+		</td></tr></table>
     </h:form>
 </div>

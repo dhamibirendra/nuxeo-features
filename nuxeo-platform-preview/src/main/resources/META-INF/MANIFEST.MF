@@ -10,9 +10,7 @@ Require-Bundle: org.nuxeo.ecm.platform.ui,
  org.nuxeo.ecm.core.convert.api,
  org.nuxeo.runtime,
  org.nuxeo.ecm.platform.convert,
- org.nuxeo.ecm.platform.mimetype.api,
- org.nuxeo.ecm.platform.url.api;bundle-version="5.3.2",
- org.nuxeo.ecm.platform.api;bundle-version="5.3.2"
+ org.nuxeo.ecm.platform.mimetype.api
 Nuxeo-Component: OSGI-INF/restAPI-contrib.xml,
  OSGI-INF/document-adapter-contrib.xml,
  OSGI-INF/preview-adapter-framework.xml,
@@ -35,3 +33,4 @@ Export-Package: org.nuxeo.ecm.platform.preview.adapter,
 Nuxeo-Require: org.nuxeo.ecm.platform.ui,
  org.nuxeo.ecm.platform.convert,
  org.nuxeo.ecm.platform.mimetype.api
+

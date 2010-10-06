@@ -10,3 +10,4 @@ Bundle-Localization: bundle
 Eclipse-LazyStart: true
 Nuxeo-Require: org.nuxeo.ecm.platform.annotations.api,
   org.nuxeo.ecm.annotations
+
