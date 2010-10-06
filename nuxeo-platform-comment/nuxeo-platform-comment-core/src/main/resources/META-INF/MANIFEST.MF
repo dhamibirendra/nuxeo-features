@@ -8,5 +8,7 @@ Nuxeo-Component: OSGI-INF/comment-schemas-contrib.xml,
   OSGI-INF/comment-defaultPermissions-contrib.xml,
   OSGI-INF/comment-life-cycle-contrib.xml
 Eclipse-LazyStart: true
-Require-Bundle: org.nuxeo.ecm.core.schema
+Require-Bundle: org.nuxeo.ecm.core.schema,
+ org.nuxeo.ecm.platform.comment.api;bundle-version="5.3.2"
 Nuxeo-RequiredBy: org.nuxeo.ecm.platform.comment
+Bundle-Version: 5.3.2

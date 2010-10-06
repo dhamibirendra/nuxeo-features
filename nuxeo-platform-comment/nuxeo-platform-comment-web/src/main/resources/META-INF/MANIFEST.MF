@@ -8,6 +8,13 @@ Nuxeo-Component: OSGI-INF/comment-actions-contrib.xml,
   OSGI-INF/comment-types-contrib.xml
 Require-Bundle: org.nuxeo.ecm.actions,
  org.nuxeo.ecm.platform.comment.api,
- org.nuxeo.ecm.webapp.core
- 
-   
+ org.nuxeo.ecm.webapp.core,
+ org.nuxeo.ecm.core.api;bundle-version="1.6.2",
+ org.nuxeo.ecm.platform.ui;bundle-version="5.3.2"
+Bundle-Version: 5.3.2
+Import-Package: javax.faces.event;version="1.2.0",
+ javax.faces.model;version="1.2.0",
+ org.jboss.seam;version="2.1.2",
+ org.jboss.seam.annotations;version="2.1.2",
+ org.jboss.seam.annotations.intercept;version="2.1.2",
+ org.jboss.seam.annotations.web;version="2.1.2"
