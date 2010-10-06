@@ -35,6 +35,6 @@ Nuxeo-Component: OSGI-INF/default-contrib.xml,
  OSGI-INF/web-configuration-service-contrib.xml,
  OSGI-INF/preview-adapter-contrib.xml
 Nuxeo-Require: org.nuxeo.ecm.webapp.ui,
-  org.nuxeo.ecm.platform.preview,
-  org.nuxeo.theme.jsf
+ org.nuxeo.ecm.platform.preview,
+ org.nuxeo.theme.jsf
 

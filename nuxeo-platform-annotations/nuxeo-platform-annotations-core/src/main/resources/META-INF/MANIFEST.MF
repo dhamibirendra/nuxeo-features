@@ -17,4 +17,4 @@ Export-Package: org.nuxeo.ecm.annotations,
  org.nuxeo.ecm.platform.annotations.descriptors,
  org.nuxeo.ecm.platform.annotations.proxy,
  org.nuxeo.ecm.platform.annotations.service
-Nuxeo-Require: org.nuxeo.ecm.platform.annotations.api
+Nuxeo-Require: 
