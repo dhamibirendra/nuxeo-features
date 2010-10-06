@@ -213,7 +213,7 @@ function mkRow(dashBoardItem, i) {
     htmlRow+=getImageBaseUrl();
     htmlRow+=dashBoardItem.icon;
     htmlRow+="\"/>";
-    htmlRow+="</td><td><a target = \"_top\" title=\"";
+    htmlRow+="</td><td><a target = \"_parent\" title=\"";
     htmlRow+=dashBoardItem.title;
     htmlRow+="\" href=\"";
     htmlRow+=getBaseUrl();

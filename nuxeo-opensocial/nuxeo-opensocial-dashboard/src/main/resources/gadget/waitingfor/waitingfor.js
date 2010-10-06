@@ -180,7 +180,7 @@ function mkRow(dashBoardItem, i, directive) {
   htmlRow += getImageBaseUrl();
   htmlRow += "icons/file.gif";
   htmlRow += "\"/>";
-  htmlRow += "</td><td><a target = \"_top\"";
+  htmlRow += "</td><td><a target = \"_parent\"";
   if (tooltip != null) {
     htmlRow += " title=\"";
     htmlRow += tooltip;

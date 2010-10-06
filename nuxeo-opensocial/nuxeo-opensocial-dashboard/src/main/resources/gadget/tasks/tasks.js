@@ -158,7 +158,7 @@ function mkRow(dashBoardItem, i, directive) {
     htmlRow += getImageBaseUrl();
     htmlRow += "icons/file.gif";
     htmlRow += "\"/>";
-    htmlRow += "</td><td><a target = \"_top\" title=\"";
+    htmlRow += "</td><td><a target = \"_parent\" title=\"";
     var title = dashBoardItem.name;
     if ((dashBoardItem.title != null) && (dashBoardItem.title != "")) {
         title = dashBoardItem.title;
