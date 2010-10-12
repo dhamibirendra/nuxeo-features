@@ -1,40 +1,51 @@
 Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Build-Jdk: 1.6.0_20
 Bundle-ManifestVersion: 1
+Bundle-Version: 5.3.2.-SNAPSHOT-t20100930-174535
 Bundle-Name: Nuxeo ECM Annotations Client
 Bundle-SymbolicName: org.nuxeo.ecm.annotations.client;singleton:=true
-Bundle-ClassPath: .
 Bundle-Vendor: Nuxeo
 Bundle-Category: web,stateless
-Require-Bundle: javax.servlet,org.nuxeo.runtime,org.nuxeo.ecm.webapp.ui,
+Require-Bundle: org.nuxeo.runtime,
+ org.nuxeo.ecm.webapp.ui,
  org.nuxeo.ecm.platform.preview,
- com.google.gwt.servlet,
- org.nuxeo.theme.jsf,
  org.nuxeo.ecm.core.api,
- org.nuxeo.ecm.platform.web.common
-Export-Package: org.nuxeo.ecm.platform.annotations.configuration.service,
- org.nuxeo.ecm.platform.annotations.gwt.client,
- org.nuxeo.ecm.platform.annotations.gwt.client.annotea,
- org.nuxeo.ecm.platform.annotations.gwt.client.configuration,
- org.nuxeo.ecm.platform.annotations.gwt.client.configuration.filter,
- org.nuxeo.ecm.platform.annotations.gwt.client.controler,
- org.nuxeo.ecm.platform.annotations.gwt.client.model,
- org.nuxeo.ecm.platform.annotations.gwt.client.util,
- org.nuxeo.ecm.platform.annotations.gwt.client.view,
- org.nuxeo.ecm.platform.annotations.gwt.client.view.annotater,
- org.nuxeo.ecm.platform.annotations.gwt.client.view.decorator,
- org.nuxeo.ecm.platform.annotations.gwt.client.view.i18n,
- org.nuxeo.ecm.platform.annotations.gwt.client.view.listener,
- org.nuxeo.ecm.platform.annotations.gwt.client.view.menu,
- org.nuxeo.ecm.platform.annotations.gwt.mock,
- org.nuxeo.ecm.platform.annotations.gwt.server.configuration,
- org.nuxeo.ecm.platform.annotations.jsf.component,
- org.nuxeo.ecm.platform.annotations.preview
+ org.nuxeo.ecm.platform.web.common,
+ org.nuxeo.ecm.platform.url.api;bundle-version="5.3.2",
+ org.nuxeo.theme.core;bundle-version="5.3.2"
+Export-Package: org.nuxeo.ecm.platform.annotations.configuration.servi
+ ce,org.nuxeo.ecm.platform.annotations.gwt.client,org.nuxeo.ecm.platfo
+ rm.annotations.gwt.client.annotea,org.nuxeo.ecm.platform.annotations.
+ gwt.client.configuration,org.nuxeo.ecm.platform.annotations.gwt.clien
+ t.configuration.filter,org.nuxeo.ecm.platform.annotations.gwt.client.
+ controler,org.nuxeo.ecm.platform.annotations.gwt.client.model,org.nux
+ eo.ecm.platform.annotations.gwt.client.util,org.nuxeo.ecm.platform.an
+ notations.gwt.client.view,org.nuxeo.ecm.platform.annotations.gwt.clie
+ nt.view.annotater,org.nuxeo.ecm.platform.annotations.gwt.client.view.
+ decorator,org.nuxeo.ecm.platform.annotations.gwt.client.view.i18n,org
+ .nuxeo.ecm.platform.annotations.gwt.client.view.listener,org.nuxeo.ec
+ m.platform.annotations.gwt.client.view.menu,org.nuxeo.ecm.platform.an
+ notations.gwt.mock,org.nuxeo.ecm.platform.annotations.gwt.server.conf
+ iguration,org.nuxeo.ecm.platform.annotations.jsf.component,org.nuxeo.
+ ecm.platform.annotations.preview
 Nuxeo-RequiredBy: org.nuxeo.ecm.war
-Nuxeo-Component: OSGI-INF/default-contrib.xml,
- OSGI-INF/web-configuration-service-framework.xml,
- OSGI-INF/web-configuration-service-contrib.xml,
- OSGI-INF/preview-adapter-contrib.xml
-Nuxeo-Require: org.nuxeo.ecm.webapp.ui,
- org.nuxeo.ecm.platform.preview,
- org.nuxeo.theme.jsf
-
+Nuxeo-Component: OSGI-INF/default-contrib.xml,OSGI-INF/web-configurati
+ on-service-framework.xml,OSGI-INF/web-configuration-service-contrib.x
+ ml,OSGI-INF/preview-adapter-contrib.xml
+Nuxeo-Require: org.nuxeo.ecm.webapp.ui, org.nuxeo.ecm.platform.preview
+ , org.nuxeo.theme.jsf
+Import-Package: com.google.gwt.core.client;specification-version="2.0.3",
+ com.google.gwt.dom.client;specification-version="2.0.3",
+ com.google.gwt.http.client;specification-version="2.0.3",
+ com.google.gwt.i18n.client;specification-version="2.0.3",
+ com.google.gwt.user.client;specification-version="2.0.3",
+ com.google.gwt.user.client.rpc;specification-version="2.0.3",
+ com.google.gwt.user.client.ui;specification-version="2.0.3",
+ com.google.gwt.user.server.rpc;specification-version="2.0.3",
+ com.google.gwt.xml.client;specification-version="2.0.3",
+ javax.faces.context;specification-version="1.2.0",
+ javax.servlet;specification-version="2.5.0",
+ javax.servlet.http;specification-version="2.5.0",
+ org.jboss.seam.international;specification-version="2.1.2"
