@@ -1,10 +1,24 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
+Bundle-Version: 5.3.2.-SNAPSHOT-t20100930-174853
 Bundle-Name: Nuxeo ECM IO Web Client
 Bundle-SymbolicName: org.nuxeo.ecm.platform.io.web;singleton:=true
 Bundle-Vendor: Nuxeo
 Bundle-Category: web,stateless
 Eclipse-LazyStart: false
 Nuxeo-Component: OSGI-INF/actions-contrib.xml
-Require-Bundle: org.nuxeo.ecm.webapp.core
+Require-Bundle: org.nuxeo.ecm.webapp.core,
+ org.nuxeo.ecm.core.api;bundle-version="1.6.2",
+ org.nuxeo.ecm.core.io;bundle-version="5.3.2",
+ org.nuxeo.ecm.platform.ui;bundle-version="5.3.2",
+ org.nuxeo.ecm.webapp.base;bundle-version="5.3.2"
 Nuxeo-RequiredBy: org.nuxeo.ecm.war
+Import-Package: javax.faces.context;version="1.2.0",
+ javax.servlet;version="2.5.0",
+ javax.servlet.http;version="2.5.0",
+ org.apache.commons.logging;version="1.1.1",
+ org.jboss.seam;version="2.1.2",
+ org.jboss.seam.annotations;version="2.1.2"
+Nuxeo-Require: org.nuxeo.ecm.webapp.core
+Export-Package: org.nuxeo.ecm.platform.io.client,
+ org.nuxeo.ecm.platform.io.selectionReader
