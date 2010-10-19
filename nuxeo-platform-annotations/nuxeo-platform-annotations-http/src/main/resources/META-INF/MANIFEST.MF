@@ -4,8 +4,13 @@ Bundle-Name: Nuxeo ECM HTTP Annotations
 Bundle-SymbolicName: org.nuxeo.ecm.annotations.http;singleton:=true
 Bundle-Vendor: Nuxeo
 Bundle-Category: web,stateless
-Require-Bundle: javax.servlet, org.nuxeo.runtime, org.nuxeo.ecm.platform.annotations.api,
-  org.nuxeo.ecm.annotations
+Require-Bundle: org.nuxeo.runtime,
+ org.nuxeo.ecm.platform.annotations.api,
+ org.nuxeo.ecm.annotations,
+ org.nuxeo.ecm.core.api;bundle-version="1.6.2",
+ org.nuxeo.ecm.relations.api;bundle-version="5.3.2"
 Bundle-Localization: bundle
 Eclipse-LazyStart: true
 Nuxeo-Require: 
+Import-Package: javax.servlet;version="2.5.0",
+ javax.servlet.http;version="2.5.0"
