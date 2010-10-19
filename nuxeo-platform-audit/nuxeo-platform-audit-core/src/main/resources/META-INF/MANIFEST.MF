@@ -6,10 +6,22 @@ Bundle-Localization: plugin
 Bundle-Vendor: Nuxeo
 Bundle-Category: web,stateful
 Nuxeo-Component: OSGI-INF/nxaudit-service.xml
-Export-Package: org.nuxeo.ecm.platform.audit,
+Export-Package: org.nuxeo.ecm.platform.audit.listener,
  org.nuxeo.ecm.platform.audit.service,
- org.nuxeo.ecm.platform.audit.service.extension
+ org.nuxeo.ecm.platform.audit.service.extension,
+ org.nuxeo.ecm.platform.audit.service.management
 Require-Bundle: org.nuxeo.ecm.platform.audit.api,
+ org.nuxeo.ecm.platform.el,
+ org.nuxeo.ecm.core.event,
+ org.nuxeo.ecm.core.persistence,
+ org.nuxeo.ecm.core.api;bundle-version="1.6.2",
+ org.nuxeo.runtime.management;bundle-version="1.6.2"
+Import-Package: com.sun.el;version="1.0.0",
+ javax.el;version="2.1.0",
+ javax.persistence;version="1.99.0",
+ org.apache.commons.lang.builder;version="2.4.0",
+ org.apache.commons.logging;version="1.1.1"
+Nuxeo-Require: org.nuxeo.ecm.platform.audit.api,
  org.nuxeo.ecm.platform.el,
  org.nuxeo.ecm.core.event,
  org.nuxeo.ecm.core.persistence
