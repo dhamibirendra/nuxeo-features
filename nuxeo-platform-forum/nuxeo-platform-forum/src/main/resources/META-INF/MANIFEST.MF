@@ -8,6 +8,26 @@ Nuxeo-Component: OSGI-INF/forum-actions-contrib.xml,
  OSGI-INF/thread-adapters-contrib.xml
 Require-Bundle: org.nuxeo.ecm.platform.ui,
  org.nuxeo.ecm.platform.forum.api,
- org.nuxeo.ecm.platform.comment.web
+ org.nuxeo.ecm.platform.comment.web,
+ org.nuxeo.ecm.core.api;bundle-version="1.6.2",
+ org.nuxeo.ecm.platform.jbpm.api;bundle-version="5.3.2",
+ org.nuxeo.ecm.platform.api;bundle-version="5.3.2",
+ org.nuxeo.ecm.webapp.base;bundle-version="5.3.2"
 Bundle-Category: stateless
 Nuxeo-RequiredBy: org.nuxeo.ecm.war
+Nuxeo-Require: org.nuxeo.ecm.platform.ui,
+ org.nuxeo.ecm.platform.forum.api,
+ org.nuxeo.ecm.platform.comment.web
+Import-Package: javax.ejb;specification-version="3.3.0",
+ javax.faces.application;specification-version="1.2.0",
+ javax.faces.context;specification-version="1.2.0",
+ org.apache.commons.logging;specification-version="1.1.1",
+ org.hibernate.validator,
+ org.jboss.seam;specification-version="2.1.2",
+ org.jboss.seam.annotations;specification-version="2.1.2",
+ org.jboss.seam.annotations.faces;specification-version="2.1.2",
+ org.jboss.seam.annotations.web;specification-version="2.1.2",
+ org.jboss.seam.core;specification-version="2.1.2",
+ org.jboss.seam.faces;specification-version="2.1.2",
+ org.jbpm.graph.exe,
+ org.jbpm.taskmgmt.exe
