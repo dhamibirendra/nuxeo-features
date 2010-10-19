@@ -9,3 +9,6 @@ Require-Bundle: org.nuxeo.ecm.core.api,
  org.nuxeo.ecm.platform.audit.api,
  org.nuxeo.ecm.platform.audit
 Nuxeo-Component: OSGI-INF/io-audit-contrib.xml
+Import-Package: org.apache.commons.beanutils;specification-version="1.8.2",
+ org.dom4j;specification-version="1.6.1",
+ org.dom4j.io;specification-version="1.6.1"
