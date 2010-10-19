@@ -6,7 +6,10 @@ Bundle-Category: web,stateless
 Require-Bundle: org.nuxeo.ecm.platform,
  org.nuxeo.ecm.actions,
  org.nuxeo.ecm.platform.audit.api,
- org.nuxeo.ecm.webapp.core
+ org.nuxeo.ecm.webapp.core,
+ org.nuxeo.ecm.platform.ws;bundle-version="5.3.2",
+ org.nuxeo.ecm.core.api;bundle-version="1.6.2",
+ org.nuxeo.ecm.platform.ui;bundle-version="5.3.2"
 Provide-Package: org.nuxeo.ecm.platform.audit.web,
  org.nuxeo.ecm.platform.audit.web.delegate,
  org.nuxeo.ecm.platform.audit.web.listener,
@@ -20,4 +23,10 @@ Nuxeo-Require: org.nuxeo.ecm.platform,
  org.nuxeo.ecm.webapp.core,
  org.nuxeo.ecm.platform.ws;bundle-version="5.3.2",
  org.nuxeo.ecm.core.api;bundle-version="1.6.2"
+Import-Package: javax.ejb;specification-version="3.3.0",
+ javax.persistence;specification-version="1.99.0",
+ org.apache.commons.lang;specification-version="2.4.0",
+ org.jboss.seam;specification-version="2.1.2",
+ org.jboss.seam.annotations;specification-version="2.1.2",
+ org.jboss.seam.annotations.web;specification-version="2.1.2"
 
