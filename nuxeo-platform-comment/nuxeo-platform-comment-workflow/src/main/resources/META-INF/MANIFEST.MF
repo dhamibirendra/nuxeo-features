@@ -8,4 +8,13 @@ Nuxeo-Component: OSGI-INF/comment-jbpm-contrib.xml,
  OSGI-INF/comments-moderation-service.xml,
  OSGI-INF/notification-contrib.xml
 Require-Bundle: org.nuxeo.ecm.platform.comment.api,
+ org.nuxeo.ecm.core.api,
+ org.nuxeo.ecm.platform.jbpm.api;bundle-version="5.3.2",
+ org.nuxeo.ecm.core.event;bundle-version="1.6.2"
+Import-Package: org.jbpm,
+ org.jbpm.context.exe,
+ org.jbpm.graph.def,
+ org.jbpm.graph.exe,
+ org.jbpm.taskmgmt.exe
+Nuxeo-Require: org.nuxeo.ecm.platform.comment.api,
   org.nuxeo.ecm.core.api
