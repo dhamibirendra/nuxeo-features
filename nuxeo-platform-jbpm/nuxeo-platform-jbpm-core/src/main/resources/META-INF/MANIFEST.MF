@@ -1,38 +1,34 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 1
+Bundle-Version: 5.3.2
 Bundle-Name: Nuxeo ECM JBPM
 Bundle-SymbolicName: org.nuxeo.ecm.platform.jbpm.core;singleton:=true
 Bundle-Vendor: Nuxeo
 Bundle-Category: web,stateful
-Nuxeo-Component: OSGI-INF/JbpmActiveConfiguration-contrib.xml,
-  OSGI-INF/JbpmService.xml,
-  OSGI-INF/jbpmService-contrib.xml,
-  OSGI-INF/nxaudit-events-workflow.xml,
-  OSGI-INF/jbpm-listener.xml,
-  OSGI-INF/JbpmTaskListService.xml,
-  OSGI-INF/core-types-contrib.xml,
-  OSGI-INF/adapter-contrib.xml
-Require-Bundle: org.nuxeo.ecm.core.api,
- org.nuxeo.ecm.platform.jbpm.api,
- org.nuxeo.ecm.platform.usermanager,
- org.nuxeo.ecm.core.event,
- org.nuxeo.ecm.platform.usermanager.api;bundle-version="5.3.2",
- org.nuxeo.ecm.directory.api;bundle-version="5.3.2"
-Nuxeo-Require: org.nuxeo.ecm.core.api,
- org.nuxeo.ecm.platform.jbpm.api,
- org.nuxeo.ecm.platform.usermanager,
- org.nuxeo.ecm.core.event
-Bundle-Version: 5.3.2
-Import-Package: org.hibernate;specification-version="3.3.2",
- org.hibernate.dialect;specification-version="3.3.2",
- org.jbpm,
- org.jbpm.context.exe,
- org.jbpm.db,
- org.jbpm.graph.def,
- org.jbpm.graph.exe,
- org.jbpm.job,
- org.jbpm.job.executor,
- org.jbpm.persistence,
- org.jbpm.persistence.db,
- org.jbpm.svc,
- org.jbpm.taskmgmt.exe
+Nuxeo-Component: OSGI-INF/JbpmActiveConfiguration-contrib.xml, OSGI-IN
+ F/JbpmService.xml, OSGI-INF/jbpmService-contrib.xml, OSGI-INF/nxaudit
+ -events-workflow.xml, OSGI-INF/jbpm-listener.xml, OSGI-INF/JbpmTaskLi
+ stService.xml, OSGI-INF/core-types-contrib.xml, OSGI-INF/adapter-cont
+ rib.xml
+Require-Bundle: org.nuxeo.ecm.core.api,org.nuxeo.ecm.platform.jbpm.api
+ ,org.nuxeo.ecm.platform.usermanager,org.nuxeo.ecm.core.event,org.nuxe
+ o.ecm.platform.usermanager.api;bundle-version="5.3.2",org.nuxeo.ecm.d
+ irectory.api;bundle-version="5.3.2",org.nuxeo.ecm.platform.userworksp
+ ace.api;bundle-version="5.3.2"
+Nuxeo-Require: org.nuxeo.ecm.core.api,org.nuxeo.ecm.platform.jbpm.api,
+ org.nuxeo.ecm.platform.usermanager,org.nuxeo.ecm.core.event
+Import-Package: org.hibernate;specification-version="3.3.2",org.hibern
+ ate.dialect;specification-version="3.3.2",org.jbpm,org.jbpm.context.e
+ xe,org.jbpm.db,org.jbpm.graph.def,org.jbpm.graph.exe,org.jbpm.job,org
+ .jbpm.job.executor,org.jbpm.persistence,org.jbpm.persistence.db,org.j
+ bpm.svc,org.jbpm.taskmgmt.exe
+Provide-Package: org.nuxeo.ecm.plateform.jbpm.core.adapter,
+ org.nuxeo.ecm.platform.jbpm.core,
+ org.nuxeo.ecm.platform.jbpm.core.deployer,
+ org.nuxeo.ecm.platform.jbpm.core.helper,
+ org.nuxeo.ecm.platform.jbpm.core.hibernate,
+ org.nuxeo.ecm.platform.jbpm.core.hibernatequeries,
+ org.nuxeo.ecm.platform.jbpm.core.listener,
+ org.nuxeo.ecm.platform.jbpm.core.node,
+ org.nuxeo.ecm.platform.jbpm.core.pd,
+ org.nuxeo.ecm.platform.jbpm.core.service
