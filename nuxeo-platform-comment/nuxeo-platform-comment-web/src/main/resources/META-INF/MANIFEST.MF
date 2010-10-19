@@ -18,3 +18,4 @@ Import-Package: javax.faces.event;version="1.2.0",
  org.jboss.seam.annotations;version="2.1.2",
  org.jboss.seam.annotations.intercept;version="2.1.2",
  org.jboss.seam.annotations.web;version="2.1.2"
+Export-Package: org.nuxeo.ecm.platform.comment.web
