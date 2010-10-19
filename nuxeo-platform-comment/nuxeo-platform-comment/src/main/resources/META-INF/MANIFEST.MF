@@ -9,6 +9,15 @@ Nuxeo-Component: OSGI-INF/CommentService.xml,
   OSGI-INF/CommentService.xml,
   OSGI-INF/comment-listener-contrib.xml
 Eclipse-LazyStart: true
-Require-Bundle: org.nuxeo.ecm.core.event, 
+Require-Bundle: org.nuxeo.ecm.core.event,
+ org.nuxeo.ecm.relations.api,
+ org.nuxeo.ecm.platform.comment.api,
+ org.nuxeo.ecm.platform.usermanager;bundle-version="5.3.2"
+Import-Package: javax.ejb;specification-version="3.3.0"
+Nuxeo-Require: org.nuxeo.ecm.core.event,
  org.nuxeo.ecm.relations.api,
  org.nuxeo.ecm.platform.comment.api
+Provide-Package: org.nuxeo.ecm.platform.comment.ejb,
+ org.nuxeo.ecm.platform.comment.impl,
+ org.nuxeo.ecm.platform.comment.listener,
+ org.nuxeo.ecm.platform.comment.service
