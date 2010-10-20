@@ -8,8 +8,22 @@ Bundle-Version: 1.0.0
 Require-Bundle: org.nuxeo.ecm.core.event,
  org.nuxeo.ecm.platform.ui,
  org.nuxeo.ecm.webengine.core,
- org.nuxeo.ecm.relations.api
+ org.nuxeo.ecm.relations.api,
+ org.nuxeo.ecm.platform.publisher.api,
+ org.nuxeo.ecm.platform.versioning.api;bundle-version="5.3.2",
+ org.nuxeo.ecm.core.io;bundle-version="5.3.2"
 Nuxeo-Component: OSGI-INF/publisher-framework.xml,
  OSGI-INF/publisher-contrib.xml,
  OSGI-INF/publisher-listeners-contrib.xml
 Nuxeo-WebModule: org.nuxeo.ecm.platform.publisher.remoting.restHandler.RemotePubApp
+Import-Package: javax.ws.rs,
+ javax.ws.rs.core,
+ javax.ws.rs.ext,
+ org.apache.http;specification-version="4.0.0",
+ org.apache.http.entity;specification-version="4.0.0",
+ org.dom4j;specification-version="1.6.1",
+ org.dom4j.io;specification-version="1.6.1"
+Nuxeo-Require: org.nuxeo.ecm.core.event,
+ org.nuxeo.ecm.platform.ui,
+ org.nuxeo.ecm.webengine.core,
+ org.nuxeo.ecm.relations.api

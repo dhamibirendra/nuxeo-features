@@ -4,4 +4,14 @@ Bundle-Name: Nuxeo ECM Publisher Service API
 Bundle-SymbolicName: org.nuxeo.ecm.platform.publisher.api;singleton:=true
 Bundle-Version: 1.0.0
 Nuxeo-Require: 
+Import-Package: org.apache.commons.logging;specification-version="1.1.1"
+Require-Bundle: org.nuxeo.ecm.core.api;bundle-version="1.6.2",
+ org.nuxeo.ecm.platform.versioning.api;bundle-version="5.3.2"
+Provide-Package: org.nuxeo.ecm.platform.publisher.api,
+ org.nuxeo.ecm.platform.publisher.helper,
+ org.nuxeo.ecm.platform.publisher.remoting.marshaling,
+ org.nuxeo.ecm.platform.publisher.remoting.marshaling.interfaces,
+ org.nuxeo.ecm.platform.publisher.rules,
+ org.nuxeo.ecm.platform.publisher.synchonize.client,
+ org.nuxeo.ecm.platform.publisher.synchonize.server
 
