@@ -2,5 +2,21 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 1
 Bundle-Name: Nuxeo WebEngine Base
 Bundle-SymbolicName: org.nuxeo.ecm.webengine.base;singleton:=true
-Require-Bundle: org.nuxeo.ecm.webengine.core
+Require-Bundle: org.nuxeo.ecm.webengine.core,
+ org.nuxeo.runtime;bundle-version="1.6.2",
+ org.nuxeo.ecm.core.api;bundle-version="1.6.2",
+ org.nuxeo.ecm.platform.versioning.api;bundle-version="5.3.2",
+ org.nuxeo.ecm.platform.audit.api;bundle-version="5.3.2",
+ org.nuxeo.ecm.platform.comment.api;bundle-version="5.3.2",
+ org.nuxeo.ecm.platform.usermanager;bundle-version="5.3.2"
 Nuxeo-WebModule: org.nuxeo.ecm.webengine.base.BaseModule; explode:=true; compat:=true
+Import-Package: javax.ejb;specification-version="3.3.0",
+ javax.servlet;specification-version="2.5.0",
+ javax.servlet.http;specification-version="2.5.0",
+ javax.ws.rs,
+ javax.ws.rs.core,
+ org.apache.commons.logging;specification-version="1.1.1"
+Nuxeo-Require: org.nuxeo.ecm.webengine.core
+Provide-Package: org.nuxeo.ecm.core.rest,
+ org.nuxeo.ecm.core.rest.security,
+ org.nuxeo.ecm.webengine.base

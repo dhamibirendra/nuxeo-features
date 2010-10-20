@@ -9,5 +9,15 @@ Eclipse-LazyStart: false
 Nuxeo-Component: OSGI-INF/userworkspace-actions-contrib.xml
 Nuxeo-RequiredBy: org.nuxeo.ecm.war
 Require-Bundle: org.nuxeo.ecm.actions,
-  org.nuxeo.ecm.platform.userworkspace.api,
-  org.nuxeo.ecm.webapp.core
+ org.nuxeo.ecm.platform.userworkspace.api,
+ org.nuxeo.ecm.webapp.core,
+ org.nuxeo.ecm.core.api;bundle-version="1.6.2",
+ org.nuxeo.ecm.platform.ui;bundle-version="5.3.2"
+Import-Package: javax.ejb;specification-version="3.3.0",
+ org.apache.commons.logging;specification-version="1.1.1",
+ org.jboss.seam;specification-version="2.1.2",
+ org.jboss.seam.annotations;specification-version="2.1.2",
+ org.jboss.seam.core;specification-version="2.1.2"
+Nuxeo-Require: org.nuxeo.ecm.actions,
+ org.nuxeo.ecm.platform.userworkspace.api,
+ org.nuxeo.ecm.webapp.core

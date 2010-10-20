@@ -5,5 +5,14 @@ Bundle-SymbolicName: org.nuxeo.ecm.webengine.admin;singleton:=true
 Bundle-Version: 1.0.0
 Bundle-Vendor: Nuxeo
 Provide-Package: org.nuxeo.ecm.webengine.wiki
-Require-Bundle: org.nuxeo.ecm.webengine.core
+Require-Bundle: org.nuxeo.ecm.webengine.core,
+ org.nuxeo.common;bundle-version="1.6.2",
+ org.nuxeo.runtime;bundle-version="1.6.2",
+ org.nuxeo.ecm.webengine.base;bundle-version="5.3.2",
+ org.nuxeo.ecm.core.api;bundle-version="1.6.2",
+ org.nuxeo.ecm.platform.usermanager;bundle-version="5.3.2"
 Nuxeo-Require: org.nuxeo.ecm.webengine.core
+Import-Package: javax.servlet;specification-version="2.5.0",
+ javax.servlet.http;specification-version="2.5.0",
+ javax.ws.rs,
+ javax.ws.rs.core
