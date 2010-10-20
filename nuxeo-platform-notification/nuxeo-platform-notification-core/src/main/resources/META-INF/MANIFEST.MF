@@ -10,9 +10,12 @@ Nuxeo-Component: OSGI-INF/NotificationService.xml,
  OSGI-INF/rendering-service.xml,
  OSGI-INF/notification-listener-contrib.xml
 Export-Package: org.nuxeo.ecm.platform.ec.notification,
- org.nuxeo.ecm.platform.ec.notification.ejb,
- org.nuxeo.ecm.platform.ec.notification.interfaces,
- org.nuxeo.ecm.platform.ec.notification.service
+ org.nuxeo.ecm.platform.ec.notification.email,
+ org.nuxeo.ecm.platform.ec.notification.email.templates,
+ org.nuxeo.ecm.platform.ec.notification.service,
+ org.nuxeo.ecm.platform.rendering,
+ org.nuxeo.ecm.platform.rendering.impl,
+ org.nuxeo.ecm.platform.rendering.template
 Require-Bundle: org.nuxeo.ecm.platform.placeful.core,
  org.nuxeo.ecm.platform.usermanager,
  org.nuxeo.ecm.platform.notification.api,
@@ -26,4 +29,14 @@ Nuxeo-Require:  org.nuxeo.ecm.platform.placeful.core,
  org.nuxeo.ecm.platform.url.api,
  org.nuxeo.ecm.core.event,
  org.nuxeo.ecm.platform.placeful.api;bundle-version="5.3.2"
-
+Import-Package: freemarker.cache;version="2.3.16",
+ freemarker.core;version="2.3.16",
+ freemarker.template;version="2.3.16",
+ freemarker.template.utility;version="2.3.16",
+ javax.mail;version="1.4.1",
+ javax.mail.event;version="1.4.1",
+ javax.mail.internet;version="1.4.1",
+ javax.mail.search;version="1.4.1",
+ javax.mail.util;version="1.4.1",
+ javax.persistence;version="1.99.0",
+ org.apache.commons.lang;version="2.4.0"
