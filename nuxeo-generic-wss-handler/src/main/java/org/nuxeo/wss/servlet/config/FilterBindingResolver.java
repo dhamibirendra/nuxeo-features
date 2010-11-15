@@ -77,6 +77,9 @@ public class FilterBindingResolver {
             if (m.matches()) {
                 if (m.groupCount() > 0) {
                     String site = m.group(1);
+                    if ((site != null) && site.equals("/nuxeo")) {
+                    	site = "";
+                    }
                     return new FilterBindingConfig(binding, site);
                 } else {
                     return binding;
