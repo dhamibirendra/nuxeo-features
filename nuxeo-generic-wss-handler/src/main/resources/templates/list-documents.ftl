@@ -20,7 +20,7 @@
 <li>vti_timecreated
 <li>TR|${item.createdTS}
 <li>vti_title
-<li>SW|${item.title}
+<li>SW|${item.displayName}
 <li>_Author
 <li>SW|Tiry
 <li>_Category
@@ -97,7 +97,7 @@
 <li>vti_listname
 <li>SR|&#123;${parent.etag}&#125;
 <li>vti_listtitle
-<li>SR|${parent.name}
+<li>SR|${parent.displayName}
 <li>vti_listbasetype
 <li>IR|1
 <li>vti_listenableversioning
@@ -134,6 +134,8 @@
 <li>TW|${item.modifiedTS}
 <li>vti_timelastmodified
 <li>TR|${item.modifiedTS}
+<li>vti_listtitle
+<li>SR|${item.displayName}
 </ul>
 </ul>
 </#list>

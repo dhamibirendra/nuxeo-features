@@ -18,6 +18,7 @@
 package org.nuxeo.ecm.platform.wss.backend;
 
 import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.util.Calendar;
@@ -243,7 +244,12 @@ public class NuxeoListItem extends AbstractWSSListItem implements WSSListItem {
             try {
                 Blob blob = bh.getBlob();
                 if (blob != null) {
-                    return blob.getFilename();
+                	String temp = blob.getFilename();
+                	try {
+                		return (temp == null) ? null : new String(temp.getBytes("UTF-8"));
+                	} catch (UnsupportedEncodingException e) {
+                		return temp;
+                	}
                 }
             } catch (ClientException e) {
                 log.error("Unable to get filename", e);
