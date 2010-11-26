@@ -16,6 +16,9 @@
  */
 package org.nuxeo.wss.url;
 
+import java.io.UnsupportedEncodingException;
+
+import org.nuxeo.common.utils.Path;
 import org.nuxeo.wss.WSSConfig;
 import org.nuxeo.wss.servlet.WSSRequest;
 
@@ -63,17 +66,42 @@ public class WSSUrlMapper {
     public static String getUrlWithSitePath(WSSRequest request, String location) {
 
         String sitePath = request.getSitePath();
+        
+        String newLocation = location;
+        if (location != null) {
+        	boolean leadingSlash = location.startsWith("/");
+        	
+	        // decode the location
+	        Path decodePath = new Path(location);
+	        String[] segs = new String[decodePath.segmentCount()];
+	        
+	        for (int i = 0; i < decodePath.segmentCount(); i++) {
+	        	try {
+					segs[i] = java.net.URLDecoder.decode(decodePath.segment(i), "UTF-8");
+				} catch (UnsupportedEncodingException e) {
+					segs[i] = decodePath.segment(i);
+				}
+	        }
+	        
+	        newLocation = Path.createFromSegments(segs).toString();
+	        if ((leadingSlash) && (!newLocation.startsWith("/"))) {
+	        	newLocation = "/" + newLocation;
+	        } else if((!leadingSlash) && (newLocation.startsWith("/"))) {
+	        	newLocation = newLocation.substring(1);
+	        }
+        }
+        
         //location = getCleanUrl(location);
         if (sitePath != null && !"".equals(sitePath)) {
             String fullPath = sitePath;
-            if (location.startsWith("/")) {
-                fullPath = fullPath + location;
+            if (newLocation.startsWith("/")) {
+                fullPath = fullPath + newLocation;
             } else {
-                fullPath = fullPath + "/" + location;
+                fullPath = fullPath + "/" + newLocation;
             }
             return fullPath;
         } else {
-            return location;
+            return newLocation;
         }
     }
 

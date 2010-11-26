@@ -31,6 +31,8 @@ public interface WSSListItem {
     public String getRelativeSubPath(String siteRootPath);
 
     public String getRelativeFilePath(String siteRootPath);
+    
+    public String getRelativeFilePathForFileOpen(String siteRootPath);
 
     public String getDescription();
 

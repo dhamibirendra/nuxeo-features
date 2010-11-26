@@ -218,7 +218,18 @@ public class NuxeoListItem extends AbstractWSSListItem implements WSSListItem {
         }
         Path completePath = new Path(urlRoot);
         completePath = completePath.append(path);
-        path = completePath.toString();
+        
+        // encode the path
+        String[] encodeSegments = new String[completePath.segmentCount()];
+        for (int i = 0; i < completePath.segmentCount(); i++) {
+        	try {
+				encodeSegments[i] = java.net.URLEncoder.encode(completePath.segment(i), "UTF-8");
+			} catch (UnsupportedEncodingException e) {
+				encodeSegments[i] = completePath.segment(i);
+			}
+        }
+                
+        path = Path.createFromSegments(encodeSegments).toString();
         if (path.startsWith("/")) {
             path = path.substring(1);
         }
@@ -232,7 +243,33 @@ public class NuxeoListItem extends AbstractWSSListItem implements WSSListItem {
             String filename = getFileName();
             if (filename != null) {
                 // XXX : check for duplicated names
-                path = new Path(path).removeLastSegments(1).append(filename).toString();
+            	 path = new Path(path).removeLastSegments(1).append(filename).toString();
+            }
+        }
+        return path;
+    }
+    
+    public String getRelativeFilePathForFileOpen (String siteRootPath){
+        String path = getRelativeSubPath(siteRootPath);
+        if (!doc.isFolder()) {
+            String filename = getFileName();
+            if (filename != null) {
+                // XXX : check for duplicated names
+            	Path newPath = new Path(path).removeLastSegments(1);
+            	
+            	String[] segs = new String[newPath.segmentCount()];
+            	for (int i = 0; i < newPath.segmentCount(); i++) {
+            		try {
+						segs[i] = java.net.URLEncoder.encode(newPath.segment(i), "UTF-8");
+					} catch (UnsupportedEncodingException e) {
+						segs[i] = newPath.segment(i);
+					}
+            		
+            	}
+                path = Path.createFromSegments(segs).append(filename).toString();
+                if (path.startsWith("/")) {
+                	path = path.substring(1);
+                }
             }
         }
         return path;
