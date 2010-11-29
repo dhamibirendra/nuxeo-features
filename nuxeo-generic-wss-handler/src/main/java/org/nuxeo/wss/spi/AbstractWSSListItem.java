@@ -129,6 +129,10 @@ public abstract class AbstractWSSListItem implements WSSListItem {
     public String getRelativeFilePathForFileOpen (String siteRootPath){
     	return getRelativeFilePath(siteRootPath);
     }
+    
+    public String getItemPath() {
+    	return this.getSubPath();
+    }
 
     public boolean isSite() {
         return isSiteItem;

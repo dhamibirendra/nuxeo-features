@@ -27,6 +27,8 @@ public interface WSSListItem {
     public String getAuthor();
 
     public String getSubPath();
+    
+    public String getItemPath();
 
     public String getRelativeSubPath(String siteRootPath);
 

@@ -34,9 +34,13 @@ import org.nuxeo.ecm.core.api.CoreSession;
 import org.nuxeo.ecm.core.api.DocumentModel;
 import org.nuxeo.ecm.core.api.blobholder.BlobHolder;
 import org.nuxeo.ecm.core.api.impl.blob.StreamingBlob;
+import org.nuxeo.ecm.core.api.security.SecurityConstants;
 import org.nuxeo.wss.WSSException;
 import org.nuxeo.wss.spi.AbstractWSSListItem;
 import org.nuxeo.wss.spi.WSSListItem;
+
+import com.intalio.core.api.CRMCoreUtils;
+import com.intalio.core.api.CRMDocumentNames;
 
 public class NuxeoListItem extends AbstractWSSListItem implements WSSListItem {
 
@@ -235,6 +239,10 @@ public class NuxeoListItem extends AbstractWSSListItem implements WSSListItem {
         }
         return path;
     }
+    
+    public String getItemPath() {
+    	return this.doc.getPathAsString();
+    }
 
     @Override
     public String getRelativeFilePath(String siteRootPath) {
@@ -310,8 +318,20 @@ public class NuxeoListItem extends AbstractWSSListItem implements WSSListItem {
         }
     }
 
-    public void setStream(InputStream is, String fileName) throws WSSException {
+    public void setStream(InputStream is, String fileName) throws WSSException {    	
         if (doc.hasSchema("file")) {
+        	
+        	// check the edit permission
+        	try {
+				boolean writeAllowed = getSession().hasPermission(doc.getRef(), SecurityConstants.WRITE);
+				if (!writeAllowed) {
+					throw new WSSException("You don't have write permission on this document.");
+				} 
+			} catch (ClientException e1) {
+				log.error("Error while check permission", e1);
+				throw new WSSException("Error while checking write permission.", e1);
+			}
+        	
             //Blob blob = new InputStreamBlob(is);
             Blob blob = StreamingBlob.createFromStream(is);
             if (fileName != null) {

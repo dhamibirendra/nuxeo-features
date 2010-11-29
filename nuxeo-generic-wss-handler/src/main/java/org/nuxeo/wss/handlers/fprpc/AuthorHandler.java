@@ -27,6 +27,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.nuxeo.common.utils.Path;
 import org.nuxeo.wss.WSSException;
 import org.nuxeo.wss.fprpc.FPError;
 import org.nuxeo.wss.fprpc.FPRPCCall;
@@ -35,6 +36,8 @@ import org.nuxeo.wss.fprpc.FPRPCResponse;
 import org.nuxeo.wss.spi.WSSBackend;
 import org.nuxeo.wss.spi.WSSListItem;
 import org.nuxeo.wss.url.WSSUrlMapper;
+
+import com.intalio.core.api.CRMDocumentNames;
 
 public class AuthorHandler extends AbstractFPRPCHandler implements FPRPCHandler {
 
@@ -147,7 +150,35 @@ public class AuthorHandler extends AbstractFPRPCHandler implements FPRPCHandler 
                 fpResponse.setProcessed(true);
                 return;
             }
-            doc.setStream(request.getVermeerBinary(), fileName);
+            
+            // check the parent document, forbidden when put documents to main-workspace, crmmodule...
+            // check the permission for crmrecord
+            String docPath = doc.getItemPath();
+            if ((docPath != null) && (docPath.length() > 0)) {
+            	Path path = new Path(docPath);
+            	Path parentPath = path.removeLastSegments(1);
+            	
+            	if (CRMDocumentNames.isMainWorkspace(parentPath) 
+            			|| CRMDocumentNames.isModuleByName(parentPath.lastSegment())) {
+                	fpResponse.addRenderingParameter("method",call.getMethodName());
+                	fpResponse.addRenderingParameter("errorCode", "1966082");
+                	fpResponse.addRenderingParameter("errorMessgae", "Access Denied.");
+                	fpResponse.setRenderingTemplateName("fp-error.ftl");
+                	
+                	return;
+            	}
+            }
+            
+            try {            
+            	doc.setStream(request.getVermeerBinary(), fileName);
+            } catch (WSSException e) {
+            	fpResponse.addRenderingParameter("method",call.getMethodName());
+            	fpResponse.addRenderingParameter("errorCode", "1966082");
+            	fpResponse.addRenderingParameter("errorMessgae", e.getMessage());
+            	fpResponse.setRenderingTemplateName("fp-error.ftl");
+            	return;
+            }
+            
             fpResponse.addRenderingParameter("doc", doc);
             fpResponse.setRenderingTemplateName("put-document.ftl");
 
