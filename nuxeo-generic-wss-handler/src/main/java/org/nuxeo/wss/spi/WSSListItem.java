@@ -27,10 +27,14 @@ public interface WSSListItem {
     public String getAuthor();
 
     public String getSubPath();
+    
+    public String getItemPath();
 
     public String getRelativeSubPath(String siteRootPath);
 
     public String getRelativeFilePath(String siteRootPath);
+    
+    public String getRelativeFilePathForFileOpen(String siteRootPath);
 
     public String getDescription();
 

@@ -69,6 +69,9 @@ import org.nuxeo.wss.spi.dws.Task;
 import org.nuxeo.wss.spi.dws.User;
 import org.nuxeo.wss.spi.dws.UserImpl;
 
+import com.intalio.core.api.CRMCoreUtils;
+import com.intalio.core.api.CRMDocumentNames;
+
 public class SimpleNuxeoBackend extends AbstractNuxeoCoreBackend implements WSSBackend {
 
     private static final Log log = LogFactory.getLog(SimpleNuxeoBackend.class);
@@ -312,7 +315,9 @@ public class SimpleNuxeoBackend extends AbstractNuxeoCoreBackend implements WSSB
         }
 
         String nodeName = cleanName(name);
-
+        if (CRMDocumentNames.isCRMDocument(parent.getPath())) {
+        	nodeName = CRMDocumentNames.getChildName(parent.getPath(), nodeName);
+        }
         try {
             DocumentModel newDoc = getCoreSession().createDocumentModel(parent.getPathAsString(), nodeName, targetType);
             newDoc.setPropertyValue("dc:title", name);

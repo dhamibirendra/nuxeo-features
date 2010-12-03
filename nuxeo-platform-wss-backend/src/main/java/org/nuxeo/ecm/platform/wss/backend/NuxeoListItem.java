@@ -18,6 +18,7 @@
 package org.nuxeo.ecm.platform.wss.backend;
 
 import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.util.Calendar;
@@ -33,9 +34,13 @@ import org.nuxeo.ecm.core.api.CoreSession;
 import org.nuxeo.ecm.core.api.DocumentModel;
 import org.nuxeo.ecm.core.api.blobholder.BlobHolder;
 import org.nuxeo.ecm.core.api.impl.blob.StreamingBlob;
+import org.nuxeo.ecm.core.api.security.SecurityConstants;
 import org.nuxeo.wss.WSSException;
 import org.nuxeo.wss.spi.AbstractWSSListItem;
 import org.nuxeo.wss.spi.WSSListItem;
+
+import com.intalio.core.api.CRMCoreUtils;
+import com.intalio.core.api.CRMDocumentNames;
 
 public class NuxeoListItem extends AbstractWSSListItem implements WSSListItem {
 
@@ -217,11 +222,26 @@ public class NuxeoListItem extends AbstractWSSListItem implements WSSListItem {
         }
         Path completePath = new Path(urlRoot);
         completePath = completePath.append(path);
-        path = completePath.toString();
+        
+        // encode the path
+        String[] encodeSegments = new String[completePath.segmentCount()];
+        for (int i = 0; i < completePath.segmentCount(); i++) {
+        	try {
+				encodeSegments[i] = java.net.URLEncoder.encode(completePath.segment(i), "UTF-8");
+			} catch (UnsupportedEncodingException e) {
+				encodeSegments[i] = completePath.segment(i);
+			}
+        }
+                
+        path = Path.createFromSegments(encodeSegments).toString();
         if (path.startsWith("/")) {
             path = path.substring(1);
         }
         return path;
+    }
+    
+    public String getItemPath() {
+    	return this.doc.getPathAsString();
     }
 
     @Override
@@ -231,7 +251,33 @@ public class NuxeoListItem extends AbstractWSSListItem implements WSSListItem {
             String filename = getFileName();
             if (filename != null) {
                 // XXX : check for duplicated names
-                path = new Path(path).removeLastSegments(1).append(filename).toString();
+            	 path = new Path(path).removeLastSegments(1).append(filename).toString();
+            }
+        }
+        return path;
+    }
+    
+    public String getRelativeFilePathForFileOpen (String siteRootPath){
+        String path = getRelativeSubPath(siteRootPath);
+        if (!doc.isFolder()) {
+            String filename = getFileName();
+            if (filename != null) {
+                // XXX : check for duplicated names
+            	Path newPath = new Path(path).removeLastSegments(1);
+            	
+            	String[] segs = new String[newPath.segmentCount()];
+            	for (int i = 0; i < newPath.segmentCount(); i++) {
+            		try {
+						segs[i] = java.net.URLEncoder.encode(newPath.segment(i), "UTF-8");
+					} catch (UnsupportedEncodingException e) {
+						segs[i] = newPath.segment(i);
+					}
+            		
+            	}
+                path = Path.createFromSegments(segs).append(filename).toString();
+                if (path.startsWith("/")) {
+                	path = path.substring(1);
+                }
             }
         }
         return path;
@@ -243,7 +289,12 @@ public class NuxeoListItem extends AbstractWSSListItem implements WSSListItem {
             try {
                 Blob blob = bh.getBlob();
                 if (blob != null) {
-                    return blob.getFilename();
+                	String temp = blob.getFilename();
+                	try {
+                		return (temp == null) ? null : new String(temp.getBytes("UTF-8"));
+                	} catch (UnsupportedEncodingException e) {
+                		return temp;
+                	}
                 }
             } catch (ClientException e) {
                 log.error("Unable to get filename", e);
@@ -267,8 +318,20 @@ public class NuxeoListItem extends AbstractWSSListItem implements WSSListItem {
         }
     }
 
-    public void setStream(InputStream is, String fileName) throws WSSException {
+    public void setStream(InputStream is, String fileName) throws WSSException {    	
         if (doc.hasSchema("file")) {
+        	
+        	// check the edit permission
+        	try {
+				boolean writeAllowed = getSession().hasPermission(doc.getRef(), SecurityConstants.WRITE);
+				if (!writeAllowed) {
+					throw new WSSException("You don't have write permission on this document.");
+				} 
+			} catch (ClientException e1) {
+				log.error("Error while check permission", e1);
+				throw new WSSException("Error while checking write permission.", e1);
+			}
+        	
             //Blob blob = new InputStreamBlob(is);
             Blob blob = StreamingBlob.createFromStream(is);
             if (fileName != null) {

@@ -48,7 +48,7 @@
             </TR>
             <#list items as item>
             <TR class="" fileattribute=${item.type}
-                ID="${request.getBaseUrl()}${item.getRelativeFilePath("")}"
+                ID="${request.getBaseUrl()}${item.getRelativeFilePathForFileOpen("")}"
                 onmousedown="selectrow(this)" onclick="selectrow(this)">
                 <TD valign="top" class="ms-vb2" width="16"><Img width="16" height="16"
                     SRC="icons/${item.icon}" title="icon" alt="icon"></TD>
