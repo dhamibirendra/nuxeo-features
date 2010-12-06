@@ -51,7 +51,6 @@ import org.nuxeo.ecm.platform.relations.api.impl.RelationDate;
 import org.nuxeo.ecm.platform.relations.api.impl.StatementImpl;
 import org.nuxeo.ecm.platform.relations.api.util.RelationConstants;
 import org.nuxeo.ecm.platform.usermanager.UserManager;
-import org.nuxeo.ecm.platform.wss.service.PluggableBackendFactory;
 import org.nuxeo.ecm.platform.wss.service.WSSPlugableBackendManager;
 import org.nuxeo.runtime.api.Framework;
 import org.nuxeo.wss.WSSException;
@@ -304,6 +303,13 @@ public class SimpleNuxeoBackend extends AbstractNuxeoCoreBackend implements WSSB
         if (!parent.isFolder()) {
             throw new WSSException("Can not create a child in a non folderish node");
         }
+        
+        // can't allow to create document under main workspace
+        // and module folder        
+    	if (CRMCoreUtils.isMainWorkspace(parent) 
+    			|| CRMCoreUtils.isModule(parent)) {
+    		throw new WSSException("Forbidden to create documents under this folder!");
+    	}
 
         String targetType = WSSPlugableBackendManager.folderishDocType;
         if (folderish) {
