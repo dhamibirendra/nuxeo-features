@@ -11,10 +11,10 @@
 <ul>
 </ul>
 </ul>
-</#list>
 </ul>
 <p>removed_dirs=
 <ul>
+</#list>
 <#list removedDirUrls as url>
 <ul>
 <li>document_name=${url}
@@ -22,6 +22,9 @@
 <ul>
 </ul>
 </ul>
+</ul>
+<p>removed_dirs=
+<ul>
 </#list>
 </ul>
 <p>failed_docs=
