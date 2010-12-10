@@ -31,7 +31,7 @@
     <action id="sendEmail" enabled="false"/>
 
     <action id="sendNotificationEmail" link="send_notification_email" enabled="true"
-        order="17" label="action.email.document" icon="/icons/mail.gif">
+        order="17" label="action.nemail.document" icon="/icons/mail.png">
       <category>DOCUMENT_UPPER_ACTION</category>
       <filter-id>not_folder</filter-id>
       <filter-id>not_anonymous</filter-id>
