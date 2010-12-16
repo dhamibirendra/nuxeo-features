@@ -310,6 +310,11 @@ public class SimpleNuxeoBackend extends AbstractNuxeoCoreBackend implements WSSB
     			|| CRMCoreUtils.isModule(parent)) {
     		throw new WSSException("Forbidden to create documents under this folder!");
     	}
+    	
+    	// can't allow to create one folder under crm record
+    	if (folderish && CRMCoreUtils.isRecord(parent)) {
+    		throw new WSSException("Forbidden to create documents under this folder!");
+    	}
 
         String targetType = WSSPlugableBackendManager.folderishDocType;
         if (folderish) {
