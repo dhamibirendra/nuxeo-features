@@ -28,6 +28,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.nuxeo.common.utils.Path;
+import org.nuxeo.common.utils.i18n.I18NUtils;
 import org.nuxeo.wss.WSSException;
 import org.nuxeo.wss.fprpc.FPError;
 import org.nuxeo.wss.fprpc.FPRPCCall;
@@ -37,6 +38,7 @@ import org.nuxeo.wss.spi.WSSBackend;
 import org.nuxeo.wss.spi.WSSListItem;
 import org.nuxeo.wss.url.WSSUrlMapper;
 
+import com.intalio.core.api.CRMCoreUtils;
 import com.intalio.core.api.CRMDocumentNames;
 
 public class AuthorHandler extends AbstractFPRPCHandler implements FPRPCHandler {
@@ -169,7 +171,24 @@ public class AuthorHandler extends AbstractFPRPCHandler implements FPRPCHandler 
             	}
             }
             
+            
             try {            
+                // file size check
+                try {
+                	int maxSize = CRMCoreUtils.getMaxAttachmentSize();
+                	if (maxSize > 0) {
+						int actualFileSize = Integer.parseInt(request
+								.getHttpRequest().getHeader("Content-Length"));
+                		if (actualFileSize > maxSize) {
+							String errorMessage = "File is larger than allowable maximum of "
+									+ CRMCoreUtils.convertSize(maxSize);
+							throw new WSSException(errorMessage);
+                		}
+                	}					
+				} catch (Exception e) {
+					throw new WSSException(e.getMessage());
+				}
+
             	doc.setStream(request.getVermeerBinary(), fileName);
             } catch (WSSException e) {
             	fpResponse.addRenderingParameter("method",call.getMethodName());
