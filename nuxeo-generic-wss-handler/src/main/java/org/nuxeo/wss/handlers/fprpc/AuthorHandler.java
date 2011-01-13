@@ -129,6 +129,31 @@ public class AuthorHandler extends AbstractFPRPCHandler implements FPRPCHandler 
             WSSListItem doc;
             String fileName;
 
+            try {            
+                // file size check
+                try {
+                	int maxSize = CRMCoreUtils.getMaxAttachmentSize();
+                	if (maxSize > 0) {
+						int actualFileSize = Integer.parseInt(request
+								.getHttpRequest().getHeader("Content-Length"));
+                		if (actualFileSize > maxSize) {
+							String errorMessage = "File is larger than allowable maximum of "
+									+ CRMCoreUtils.convertSize(maxSize);
+							throw new WSSException(errorMessage);
+                		}
+                	}					
+				} catch (Exception e) {
+					throw new WSSException(e.getMessage());
+				}
+
+            } catch (WSSException e) {
+            	fpResponse.addRenderingParameter("method",call.getMethodName());
+            	fpResponse.addRenderingParameter("errorCode", "1966082");
+            	fpResponse.addRenderingParameter("errorMessgae", e.getMessage());
+            	fpResponse.setRenderingTemplateName("fp-error.ftl");
+            	return;
+            }
+            
             if (backend.exists(location)) {
                 doc = backend.getItem(location);
                 String[] urlParts = url.split("/");
@@ -153,50 +178,7 @@ public class AuthorHandler extends AbstractFPRPCHandler implements FPRPCHandler 
                 return;
             }
             
-            // check the parent document, forbidden when put documents to main-workspace, crmmodule...
-            // check the permission for crmrecord
-            String docPath = doc.getItemPath();
-            if ((docPath != null) && (docPath.length() > 0)) {
-            	Path path = new Path(docPath);
-            	Path parentPath = path.removeLastSegments(1);
-            	
-            	if (CRMDocumentNames.isMainWorkspace(parentPath) 
-            			|| CRMDocumentNames.isModuleByName(parentPath.lastSegment())) {
-                	fpResponse.addRenderingParameter("method",call.getMethodName());
-                	fpResponse.addRenderingParameter("errorCode", "1966082");
-                	fpResponse.addRenderingParameter("errorMessgae", "Access Denied.");
-                	fpResponse.setRenderingTemplateName("fp-error.ftl");
-                	
-                	return;
-            	}
-            }
-            
-            
-            try {            
-                // file size check
-                try {
-                	int maxSize = CRMCoreUtils.getMaxAttachmentSize();
-                	if (maxSize > 0) {
-						int actualFileSize = Integer.parseInt(request
-								.getHttpRequest().getHeader("Content-Length"));
-                		if (actualFileSize > maxSize) {
-							String errorMessage = "File is larger than allowable maximum of "
-									+ CRMCoreUtils.convertSize(maxSize);
-							throw new WSSException(errorMessage);
-                		}
-                	}					
-				} catch (Exception e) {
-					throw new WSSException(e.getMessage());
-				}
-
-            	doc.setStream(request.getVermeerBinary(), fileName);
-            } catch (WSSException e) {
-            	fpResponse.addRenderingParameter("method",call.getMethodName());
-            	fpResponse.addRenderingParameter("errorCode", "1966082");
-            	fpResponse.addRenderingParameter("errorMessgae", e.getMessage());
-            	fpResponse.setRenderingTemplateName("fp-error.ftl");
-            	return;
-            }
+        	doc.setStream(request.getVermeerBinary(), fileName);
             
             fpResponse.addRenderingParameter("doc", doc);
             fpResponse.setRenderingTemplateName("put-document.ftl");
