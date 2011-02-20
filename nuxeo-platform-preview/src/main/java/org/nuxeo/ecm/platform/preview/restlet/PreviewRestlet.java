@@ -17,6 +17,7 @@ package org.nuxeo.ecm.platform.preview.restlet;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
@@ -218,6 +219,34 @@ public class PreviewRestlet extends BaseNuxeoRestlet {
                 "");
         tempfile.deleteOnExit();
         previewBlob.transferTo(tempfile);
+
+        
+        // jackie@intalio.com:
+        // remove document outline because it dosn't support Japanese
+        String content = null;
+        byte[] filecontent = new byte[(int)tempfile.length()];
+        try {
+        	FileInputStream in = new FileInputStream(tempfile);
+        	in.read(filecontent);
+        	in.close();
+        	content = new String (filecontent); // must not use "utf-8" here
+        }catch(Exception e){
+        	log.error("cannot read preview result file "+ tempfile.getAbsoluteFile() , e);
+        }
+      
+        if (content != null){
+	        content = content.replaceAll("(?s)(<A name=\"outline\"></a><h1>Document Outline</h1>.*?</ul>)", "<div style=\"display:none\">$1</div>");
+	        FileWriter fw = new FileWriter(tempfile, false);
+	        try{
+	        	fw.write(content);
+	        	fw.close();
+	        }catch (Exception e){
+	        	log.error("cannot write preview result file "+ tempfile.getAbsoluteFile() , e);
+	        }
+        }
+        // ---
+        
+        
         res.setEntity(new OutputRepresentation(null) {
             @Override
             public void write(OutputStream outputStream) throws IOException {
