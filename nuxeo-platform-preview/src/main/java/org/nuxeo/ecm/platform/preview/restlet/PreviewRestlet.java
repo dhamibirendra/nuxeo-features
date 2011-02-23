@@ -235,14 +235,16 @@ public class PreviewRestlet extends BaseNuxeoRestlet {
         }
       
         if (content != null){
-	        content = content.replaceAll("(?s)(<A name=\"outline\"></a><h1>Document Outline</h1>.*?</ul>)", "<div style=\"display:none\">$1</div>");
+	        String r = content.replaceAll("(?s)(<A name=\"outline\"></a><h1>Document Outline</h1>.*?</ul>)", "<div style=\"display:none\">$1</div>");
+			if (!r.equals(content)){
 	        FileWriter fw = new FileWriter(tempfile, false);
 	        try{
-	        	fw.write(content);
+	        	fw.write(r);
 	        	fw.close();
 	        }catch (Exception e){
 	        	log.error("cannot write preview result file "+ tempfile.getAbsoluteFile() , e);
 	        }
+			}
         }
         // ---
         
