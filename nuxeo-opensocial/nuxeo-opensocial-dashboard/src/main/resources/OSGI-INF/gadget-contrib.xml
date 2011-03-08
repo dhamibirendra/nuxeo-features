@@ -25,6 +25,13 @@
       <icon>bbc.png</icon>
     </internalGadget>
 
+    <internalGadget name="nationalgeographic">
+      <mountPoint>/nationalgeographic</mountPoint>
+      <entryPoint>nationalgeographic.xml</entryPoint>
+      <category>gadget.category.information</category>
+      <icon>national.jpg</icon>
+    </internalGadget>
+    
     <internalGadget name="hello">
       <mountPoint>/hello</mountPoint>
       <entryPoint>hello.xml</entryPoint>
