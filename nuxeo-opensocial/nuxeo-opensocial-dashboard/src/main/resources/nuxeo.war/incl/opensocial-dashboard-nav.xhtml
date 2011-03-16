@@ -5,11 +5,11 @@
         <h:selectOneListbox class="dataInputText" size="1" id="selectDomain"
             value="#{opensocialDashboard.selectedDomain}">
             <f:selectItems value="#{opensocialDashboard.domainsSelectItems}"/>
-        </h:selectOneListbox>
+        </h:selectOneListbox><h:outputText value=" "/>
         <h:commandButton action="#{opensocialDashboard.submitSelectedDomainChange}"
             value="#{messages['command.changeDashboardSelectedDomain']}"
             styleClass="opensocial_dashboard_button"
-            id="dashboardDomainSubmitButton" />
+            id="dashboardDomainSubmitButton" /><h:outputText value=" "/>
         <h:commandLink value="#{messages['command.user.return.to.repository']}"
             class="button"
             action="#{opensocialDashboard.exit}"></h:commandLink>
