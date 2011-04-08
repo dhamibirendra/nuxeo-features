@@ -101,6 +101,11 @@ public abstract class AbstractDocumentModelSerializer implements
 
     @SuppressWarnings("unchecked")
     protected ResultField getDocumentProperty(DocumentModel doc, String colDef) throws ClientException {
+    	return this.getDocumentProperty(doc, colDef, null);
+    }
+    
+    @SuppressWarnings("unchecked")
+    protected ResultField getDocumentProperty(DocumentModel doc, String colDef, TimeZone timezone) throws ClientException {
         ResultField res = null;
         if (colDef.equals(urlField)) {
             String url = getDocumentURL(doc);
@@ -152,7 +157,11 @@ public abstract class AbstractDocumentModelSerializer implements
                         res = new ResultField(fieldName,
                                 (String) doc.getProperty(schemaName, fieldName));
                     } else if (property instanceof Calendar) {
-                        String date = DATE_PARSER.format(((Calendar) doc.getProperty(
+                    	String date = null;
+                    	if (timezone != null) {
+                    		DATE_PARSER.setTimeZone(timezone);
+                    	} 
+                    	date = DATE_PARSER.format(((Calendar) doc.getProperty(
                                 schemaName, fieldName)).getTime());
                         res = new ResultField(fieldName, date);
                     } else if (property instanceof Object[]) {

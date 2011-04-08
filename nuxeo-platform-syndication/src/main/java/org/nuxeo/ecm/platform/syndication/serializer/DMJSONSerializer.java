@@ -19,6 +19,7 @@
 
 package org.nuxeo.ecm.platform.syndication.serializer;
 
+import java.security.Principal;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -27,6 +28,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.TimeZone;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -35,18 +37,18 @@ import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import net.sf.json.JSONSerializer;
 
-import org.apache.derby.iapi.store.raw.Transaction;
-import org.dom4j.DocumentFactory;
-import org.dom4j.QName;
 import org.nuxeo.ecm.core.api.ClientException;
 import org.nuxeo.ecm.core.api.DocumentModel;
 import org.nuxeo.ecm.core.api.DocumentModelList;
 import org.nuxeo.ecm.platform.syndication.translate.TranslationHelper;
 import org.nuxeo.ecm.platform.syndication.workflow.DashBoardItem;
+import org.nuxeo.ecm.platform.usermanager.NuxeoPrincipalImpl;
 import org.restlet.data.CharacterSet;
 import org.restlet.data.MediaType;
 import org.restlet.data.Response;
 import org.restlet.resource.StringRepresentation;
+
+import com.intalio.user.UserPreference;
 
 public class DMJSONSerializer extends AbstractDocumentModelSerializer implements
         DashBoardItemSerializer {
@@ -72,13 +74,23 @@ public class DMJSONSerializer extends AbstractDocumentModelSerializer implements
 
         List<Map<String, String>> struct = new ArrayList<Map<String, String>>();
 
+        // get the timezone from current user
+        Principal principal = req.getUserPrincipal();
+        UserPreference preference = null;
+        TimeZone timezone = null;
+        
+        if (principal instanceof NuxeoPrincipalImpl) {
+        	preference = ((NuxeoPrincipalImpl)principal).getPreference();
+        	timezone = TimeZone.getTimeZone(preference.getTimeZone());
+        }
+        
         for (DocumentModel doc : docList) {
             Map<String, String> resDoc = new HashMap<String, String>();
 
             resDoc.put("id", doc.getId());
 
             for (String colDef : columnsDefinition) {
-                ResultField res = getDocumentProperty(doc, colDef);
+                ResultField res = getDocumentProperty(doc, colDef, timezone);
                 resDoc.put(res.getName(), res.getValue());
             }
             struct.add(resDoc);
